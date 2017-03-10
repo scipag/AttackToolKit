@@ -1,0 +1,45 @@
+<plugin_id>267</plugin_id>
+<plugin_name>Cherokee prior 0.4.8 error page cross site scripting</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_created_date>2004/11/04</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/14</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Improved the pattern matching and introduced the plugin changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send HEAD / HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# ### *Server:*Cherokee/0.[0-3].* OR HTTP/#.# ### *Server:*Cherokee/0.4.[0-7]*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>Check is inspired by the Nessus plugin.</plugin_comment>
+<bug_published_name>César Fernández</bug_published_name>
+<bug_published_date>2004/01/26</bug_published_date>
+<bug_affected>Cherokee prior 0.4.8</bug_affected>
+<bug_not_affected>Cherokee 0.4.8 and newer or other web servers</bug_not_affected>
+<bug_vulnerability_class>Cross Site Scripting</bug_vulnerability_class>
+<bug_description>The remote host is using Cherokee, a fast and tiny web server. There is a bug in the error page of this software which makes it vulnerable to cross site scripting attacks. An attacker may use this bug to steal the credentials of the legitimate users of this site.</bug_description>
+<bug_solution>Upgrade to Cherokee 0.4.8 or newer [ftp://alobbs.com/cherokee/0.4/cherokee-0.4.8.tar.gz]. Also limit unwanted connections and communications with firewalling if possible.</bug_solution>
+<bug_fixing_time>Approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/9496/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>7</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>Low</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do the same check.</bug_check_tool>
+<source_securityfocus_bid>9496</source_securityfocus_bid>
+<source_osvdb_id>3707</source_osvdb_id>
+<source_nessus_id>15618</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.alobbs.com/modules.php?op=modload&name=cherokee&file=index</source_misc>
+

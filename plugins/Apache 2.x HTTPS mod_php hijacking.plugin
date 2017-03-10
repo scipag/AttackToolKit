@@ -1,0 +1,47 @@
+<plugin_id>205</plugin_id>
+<plugin_name>Apache 2.x HTTPS mod_php hijacking</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_created_date>2003/12/30</plugin_created_date>
+<plugin_created_name>Mo</plugin_created_name>
+<plugin_created_email>momolly at wireless-warrior dot org</plugin_created_email>
+<plugin_created_web>http://www.wireless-warrior.org</plugin_created_web>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>2.1</plugin_version>
+<plugin_changelog>Did some major changes in version 2.0 because this plugin was first written for ATK 1.0 and not released until the release week of ATK 2.1. Corrected the plugin structure and added the accuracy values in 2.1</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send HEAD / HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/1.[0-1] ### *Server: Apache/4.[2-3]* OR HTTP/1.[0-1] ### *Server: Apache/2.0.*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>The trigger works not perfectly. But the last few vulnerable Apache versions could be identified.</plugin_comment>
+<bug_published_name>Steve Grubb</bug_published_name>
+<bug_published_email>linux_4ever at yahoo dot com</bug_published_email>
+<bug_published_date>2003/12/26</bug_published_date>
+<bug_advisory>http://www.securityfocus.com/archive/1/348368</bug_advisory>
+<bug_produced_name>Apache Software Foundation</bug_produced_name>
+<bug_produced_email>apache at apache dot org</bug_produced_email>
+<bug_produced_web>http://httpd.apache.org</bug_produced_web>
+<bug_affected>Mod_php under Apache 2.0.x</bug_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>When using mod_php, many file descriptors are leaked to the php script process. If the script page calls external programs by passthru(), exec(), or system(), thedescriptors are leaked to that program as well. One of these descriptors is the listening descriptor to port 443, also known as https. Port 443 is a privileged port and can only be bound to by a root process. It is not normal for that descriptor to be leaked to any or all programs. As a side note, this descriptor seems to be opened by apache regardless of whether or not you use https.</bug_description>
+<bug_solution>Upgrade your mod_php to the latest version.</bug_solution>
+<bug_fixing_time>Approx. 20 minutes</bug_fixing_time>
+<bug_exploit_availability>Maybe</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/9302/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>8</bug_popularity>
+<bug_simplicity>5</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>7</bug_risk>
+<source_securityfocus_bid>9302</source_securityfocus_bid>
+<source_secunia_id>10507</source_secunia_id>
+<source_securiteam_url>http://www.securiteam.com/unixfocus/5JP091FBPI.html</source_securiteam_url>
+<source_scip_id>460</source_scip_id>
+<source_literature>Hacking Intern - Angriffe, Strategien, Abwehr, Marc Ruef, Marko Rogge, Uwe Velten and Wolfram Gieseke, November 1, 2002, Data Becker, Düsseldorf, ISBN 381582284X</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

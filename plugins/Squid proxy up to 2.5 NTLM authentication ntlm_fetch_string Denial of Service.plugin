@@ -1,0 +1,49 @@
+<plugin_id>203</plugin_id>
+<plugin_name>Squid proxy up to 2.5 NTLM authentication ntlm_fetch_string Denial of Service</plugin_name>
+<plugin_family>Firewalls</plugin_family>
+<plugin_created_date>2004/09/10</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.1</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>3128</plugin_port>
+<plugin_procedure_detection>open|send GET http://www.computec.ch HTTP/1.0\nHost: http://www.computec.ch\n\n|sleep|close|pattern_exists *Server Squid/[0-1].* OR *Server Squid/2.[0-5]*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>Check is inspired by the Nessus plugin (see Nessus ID listed in the sources). Perhaps the Squid proxy is running on another port (e.g. 8080).</plugin_comment>
+<bug_published_name>Marco Ortisi</bug_published_name>
+<bug_published_web>http://www.squid-cache.org</bug_published_web>
+<bug_published_company>Squid Team</bug_published_company>
+<bug_published_date>2004/06/09</bug_published_date>
+<bug_advisory>http://www.squid-cache.org/bugs/show_bug.cgi?id=1045</bug_advisory>
+<bug_affected>Squid up to 2.5</bug_affected>
+<bug_not_affected>Squid without NTLM authentication, Squid 2.5 and newer or other proxy solutions</bug_not_affected>
+<bug_vulnerability_class>Buffer Overflow</bug_vulnerability_class>
+<bug_description>The remote host seems to be running a Squid proxy. Squid up to 2.5 has a denial of service vulnerability if the NTLM authentication string is too long. An attacker may crash the remote proxy or be able to run arbitrary code in the context of the server.</bug_description>
+<bug_solution>The server should be deactivated or de-installed if not necessary. If this is not possible, you should upgrade the software to the latest version and do not use NTLM authentication. To make it harder to find the server the daemon could be configured to listen at another port (e.g. 8099). Try to prevent unwanted connection attempts by filtering traffic with firewalling. Alternation of the application banner can confuse an attacker and let him determine the wrong software.</bug_solution>
+<bug_fixing_time>Approx. 50 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/10500/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do the same check more accurate.</bug_check_tool>
+<source_cve>CAN-2004-0541</source_cve>
+<source_securityfocus_bid>10500</source_securityfocus_bid>
+<source_secunia_id>12444</source_secunia_id>
+<source_nessus_id>12294</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www1.uk.squid-cache.org/squid/Versions/v2/2.5/bugs/squid-2.5.STABLE6-ntlm_fetch_string.patch</source_misc>
+

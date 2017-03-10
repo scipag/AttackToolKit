@@ -1,0 +1,47 @@
+<plugin_id>216</plugin_id>
+<plugin_name>Cat Soft Serv-U FTP server prior 2.5e CWD directory traversal</plugin_name>
+<plugin_family>FTP</plugin_family>
+<plugin_created_date>2004/09/13</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.1</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>21</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists 220 Serv-U FTP-Server v[0-1].* OR 220 Serv-U FTP-Server v2.[0-5].*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>This plugin is not as accurate as like the Nessus plugin because we do not exploit the potential flaw here.</plugin_comment>
+<bug_published_name>Berk Ulsoy</bug_published_name>
+<bug_published_email>berk at mutek dot org dot tr</bug_published_email>
+<bug_published_date>2000/02/29</bug_published_date>
+<bug_advisory>http://www.securityfocus.com/archive/1/48893</bug_advisory>
+<bug_affected>Serv-U FTP server prior 2.5e</bug_affected>
+<bug_not_affected>Serv-U FTP server newer than 2.5e or other ftp servers</bug_not_affected>
+<bug_vulnerability_class>Directory Traversal</bug_vulnerability_class>
+<bug_description>The Serv-U FTP server is a well-known ftp server for Windows operating systems. A problem in the CWD command let an attacker exploit a directory traversal. In this case a legitimate account and the access to a non-existent directory is needed.</bug_description>
+<bug_solution>If the ftp server is not used it should be de-installed or de-activated. Install the newest patch or bugfix to solve the problem or upgrade to the latest software version which is not vulnerable anymore. Additionally limit unwanted connections and communications with firewalling.</bug_solution>
+<bug_fixing_time>Approx. 20 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/1016/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>7</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>8</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus is able to same check and exploit the vulnerability with a denial of service plugin.</bug_check_tool>
+<source_cve>CAN-2000-0176</source_cve>
+<source_securityfocus_bid>1016</source_securityfocus_bid>
+<source_nessus_id>11392</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.securityfocus.com/archive/1/49090</source_misc>
+

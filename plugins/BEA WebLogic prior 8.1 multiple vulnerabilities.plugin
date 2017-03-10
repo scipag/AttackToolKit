@@ -1,0 +1,49 @@
+<plugin_id>228</plugin_id>
+<plugin_name>BEA WebLogic prior 8.1 multiple vulnerabilities</plugin_name>
+<plugin_family>CGI</plugin_family>
+<plugin_created_date>2004/09/15</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/14</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1. Improved the pattern matching and introduced the plugin changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send HEAD / HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# ### *WebLogic*[0-7].* OR HTTP/#.# ### *WebLogic*8.[0-1]*</plugin_procedure_detection>
+<plugin_detection_accuracy>90</plugin_detection_accuracy>
+<plugin_comment>I don't know how to detect the installed service pack accurately. Perhaps I will split this plugin in the future to detect the different flaws seperately.</plugin_comment>
+<bug_published_email>info at bea dot com</bug_published_email>
+<bug_published_web>http://www.bea.com</bug_published_web>
+<bug_published_company>BEA Systems Inc.</bug_published_company>
+<bug_published_date>2004/09/15</bug_published_date>
+<bug_advisory>http://dev2dev.bea.com/resourcelibrary/advisoriesnotifications/</bug_advisory>
+<bug_affected>BEA WebLogic prior 8.1 with SP3</bug_affected>
+<bug_not_affected>BEA WebLogic 8.1 with SP3 and newer or other solutions</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>The remote host is running BEA WebLogic which is older than version 8.1 There were more than 8 different vulnerabilities published for this version. An attacker may be able to start a denial of service attack or to get elevated privileges.</bug_description>
+<bug_solution>If the web server is not used it should be de-installed or de-activated. Install the newest patch or bugfix to solve the problem or upgrade to the latest software version which is not vulnerable anymore. Additionally limit unwanted connections and communications with firewalling.</bug_solution>
+<bug_fixing_time>Approx. 2 hours</bug_fixing_time>
+<bug_exploit_availability>Maybe</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/11168/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>8</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>8</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do the same check a bit more accurate.</bug_check_tool>
+<source_securityfocus_bid>11168</source_securityfocus_bid>
+<source_secunia_id>12524</source_secunia_id>
+<source_scip_id>831</source_scip_id>
+<source_nessus_id>14722</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://secunia.com/product/1360/</source_misc>
+

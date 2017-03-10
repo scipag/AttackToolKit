@@ -1,0 +1,34 @@
+<plugin_id>291</plugin_id>
+<plugin_name>libgtop_daemon format string</plugin_name>
+<plugin_family>Misc</plugin_family>
+<plugin_created_date>2005/01/04</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc.ruef at computec.ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_version>1.0</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>42800</plugin_port>
+<plugin_procedure_exploit>open|sleep|send %n%n\n|sleep|close|pattern_not_exists *</plugin_procedure_exploit>
+<plugin_exploit_accuracy>80</plugin_exploit_accuracy>
+<plugin_comment>The NASL script is Copyright (C) 2001 Renaud Deraison</plugin_comment>
+<bug_vulnerability_class>Format String</bug_vulnerability_class>
+<bug_description>It seems that libgtop is/was running on this port  nd is vulnerable to a format string attack which may allow an attacker to gain a shell on this host (with the privileges of 'nobody').</bug_description>
+<bug_solution>Upgrade to the latest version of libgtop_daemon.</bug_solution>
+<bug_fixing_time>Approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>4</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>6</bug_impact>
+<bug_risk>6</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus can check this flaw with the plugin 10812 (libgtop_daemon format string).</bug_check_tool>
+<source_cve>CAN-2001-0927</source_cve>
+<source_nessus_id>10812</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+
+

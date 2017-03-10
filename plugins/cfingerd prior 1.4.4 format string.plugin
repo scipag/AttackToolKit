@@ -1,0 +1,43 @@
+<plugin_id>127</plugin_id>
+<plugin_name>cfingerd prior 1.4.4 format string</plugin_name>
+<plugin_family>Finger</plugin_family>
+<plugin_created_date>2004/09/02</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.2</plugin_version>
+<plugin_changelog>Added an exploit link in version 1.1. Corrected the plugin structure and added the accuracy values in 1.2</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>79</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists *0.* OR *1.[0-3].* OR *1.4.[1-4]*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor and was inspired by Nessus plugin.</plugin_comment>
+<bug_affected>cfingerd prior 1.4.4</bug_affected>
+<bug_not_affected>cfingerd newer than 1.4.4 or other finger daemons</bug_not_affected>
+<bug_vulnerability_class>Format String</bug_vulnerability_class>
+<bug_description>The target system seems to be running cfingerd prior 1.4.4. This finger daemon is vulnerable to a format string attack. An attacker may be able to run arbirtrary code on the target host.</bug_description>
+<bug_solution>The finger service, if not needed, should be disabled (in /etc/inetd.conf) or if possible firewalled. Upgrade to the latest software version which is not vulnerable anymore.</bug_solution>
+<bug_fixing_time>Approx. 20 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.pestpatrol.com/pestinfo/c/cfingerd_1_4_3_and_prior_linux_x86_local_root_exploit.asp</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do the same check.</bug_check_tool>
+<source_cve>CAN-1999-0243</source_cve>
+<source_securityfocus_bid>2576</source_securityfocus_bid>
+<source_nessus_id>10652</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

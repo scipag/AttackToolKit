@@ -1,0 +1,43 @@
+<plugin_id>130</plugin_id>
+<plugin_name>FreeBSD 4.1.1 finger daemon file read</plugin_name>
+<plugin_family>Finger</plugin_family>
+<plugin_created_date>2004/09/02</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.3</plugin_version>
+<plugin_changelog>I increased the pattern matching performance in the version 1.2 because we don't need regulary expressions in this check. Corrected the plugin structure and added the accuracy values in 1.3</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>79</plugin_port>
+<plugin_procedure_detection>open|send /etc/passwd\n|sleep|close|pattern_exists root:</plugin_procedure_detection>
+<plugin_detection_accuracy>95</plugin_detection_accuracy>
+<plugin_comment>This plugin was inspired by Nessus plugin.</plugin_comment>
+<bug_affected>FreeBSD 4.1.1 finger daemon</bug_affected>
+<bug_not_affected>Other finger daemons</bug_not_affected>
+<bug_vulnerability_class>Wrong File Permission</bug_vulnerability_class>
+<bug_description>The target system seems to be running the FreeBSD 4.1.1 finger daemon. A query for a specific file sends the content back. An attacker can read any file on the target system with commands like "finger /etc/passwd@target".</bug_description>
+<bug_solution>The finger service, if not needed, should be disabled (in /etc/inetd.conf) or if possible firewalled. Upgrade to the latest software version to be not vulnerable anymore.</bug_solution>
+<bug_fixing_time>Approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.nessus.org</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>9</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>4</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus and ATK is able to do the same and further check.</bug_check_tool>
+<source_cve>CVE-2000-0915</source_cve>
+<source_securityfocus_bid>1803</source_securityfocus_bid>
+<source_nessus_id>10534</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

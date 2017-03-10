@@ -1,0 +1,43 @@
+<plugin_id>329</plugin_id>
+<plugin_name>YaBB Gold 1 prior SP 1.3.2 multiple input validation</plugin_name>
+<plugin_family>CGI</plugin_family>
+<plugin_created_date>2005/01/09</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc.ruef at computec.ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc.ruef at computec.ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2005/01/09</plugin_updated_date>
+<plugin_version>1.1</plugin_version>
+<plugin_changelog>Renamed the plugin file name, name and title in 1.1</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send GET /YaBB.pl HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# 200 *Powered by.*YaBB 1 Gold - *</plugin_procedure_detection>
+<plugin_detection_accuracy>75</plugin_detection_accuracy>
+<plugin_comment>The NASL script is Copyright (C) 2004 Tenable Network Security</plugin_comment>
+<bug_affected>YaBB Gold 1</bug_affected>
+<bug_false_positives>The pattern matching is not so accurate.</bug_false_positives>
+<bug_vulnerability_class>Unknown</bug_vulnerability_class>
+<bug_description>The remote host is using the YaBB 1 Gold web forum software. According to its version number, the remote version of this software is vulnerable to various input validation issues which may allow an attacker to perform a cross site scripting attack or an HTTP splitting  attack against the remote host.</bug_description>
+<bug_solution>Upgrade to YaBB 1 Gold SP 1.3.2 or newer.</bug_solution>
+<bug_fixing_time>Approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>Maybe</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/11235/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>6</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>Medium</bug_nessus_risk>
+<bug_check_tool>Nessus can check this flaw with the plugin 14806 (YaBB Gold 1 Multiple Input Validation Issues).</bug_check_tool>
+<source_securityfocus_bid>11235</source_securityfocus_bid>
+<source_nessus_id>14806</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+
+

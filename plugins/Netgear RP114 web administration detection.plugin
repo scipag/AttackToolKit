@@ -1,0 +1,31 @@
+<plugin_id>271</plugin_id>
+<plugin_name>Netgear RP114 web administration detection</plugin_name>
+<plugin_family>Firewalls</plugin_family>
+<plugin_created_date>2004/11/12</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_version>1.0</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send GET / HTTP/1.0\n\n|sleep|clsose|pattern_exists HTTP/#.# ### *WWW-Authenticate: Basic realm="RP114"*Server: ZyXEL-RomPager*</plugin_procedure_detection>
+<plugin_detection_accuracy>99</plugin_detection_accuracy>
+<plugin_comment>There are several other possibilities to detect a Netgear RP114 - These will be implemented as independend ATK plugin in the future.</plugin_comment>
+<bug_affected>Netgear RP114</bug_affected>
+<bug_not_affected>Other solutions</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>The remote host seems to be a Netgear RP114. This is a small SOHO appliance firewall. It is possible to define the most important settings over the web interface.</bug_description>
+<bug_solution>The server should be deactivated or de-installed if not necessary. To make it harder to find the server the daemon could be configured to listen at another port (e.g. 8081). Try to prevent unwanted connection attempts by filtering traffic with firewalling.</bug_solution>
+<bug_fixing_time>Approx. 1 hour</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>No</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>5</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>7</bug_impact>
+<bug_risk>6</bug_risk>
+<source_literature>Hacking Intern - Angriffe, Strategien, Abwehr, Marc Ruef, Marko Rogge, Uwe Velten and Wolfram Gieseke, November 1, 2002, Data Becker, Düsseldorf, ISBN 381582284X</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

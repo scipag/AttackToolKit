@@ -1,0 +1,52 @@
+<plugin_id>313</plugin_id>
+<plugin_name>Microsoft NNTP server prior 5.0.2195 and prior 6.0.3790 long message buffer overflow</plugin_name>
+<plugin_family>Windows</plugin_family>
+<plugin_created_date>2005/01/05</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc.ruef at computec.ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_version>1.0</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>119</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists 200 NNTP Service *5.0.[0-1]* OR 200 NNTP Service *5.0.20[0-8]* OR 200 NNTP Service *5.0.209[0-4]* OR 200 NNTP Service *6.0.[0-2]* OR 200 NNTP Service *6.0.3[0-6]* OR 200 NNTP Service *6.0.37[0-8]*</plugin_procedure_detection>
+<plugin_detection_accuracy>85</plugin_detection_accuracy>
+<plugin_comment>The NASL script is Copyright (C) 2004 Tenable Network Security</plugin_comment>
+<bug_published_name>Lucas Lavarello und Juliano Rizzo</bug_published_name>
+<bug_published_web>http://www.coresecurity.com</bug_published_web>
+<bug_published_company>Core Security Technologies</bug_published_company>
+<bug_published_date>2004/10/12</bug_published_date>
+<bug_advisory>http://www.microsoft.com/technet/security/bulletin/MS04-036.mspx</bug_advisory>
+<bug_produced_name>Microsoft</bug_produced_name>
+<bug_produced_email>info at microsoft dot com</bug_produced_email>
+<bug_produced_web>http://www.microsoft.com</bug_produced_web>
+<bug_affected>Microsoft NNTP server prior 5.0.2195 and prior 6.0.3790</bug_affected>
+<bug_vulnerability_class>Buffer Overflow</bug_vulnerability_class>
+<bug_description>The remote host is running a version of Microsoft NNTP server which is vulnerable to a buffer overflow issue. An attacker may exploit this flaw to execute arbitrary commands on the remote  host with the privileges of the NNTP server process.</bug_description>
+<bug_solution>See http://www.microsoft.com/technet/security/bulletin/MS04-036.mspx</bug_solution>
+<bug_fixing_time>Approx. 20 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securiteam.com/windowsntfocus/6T00C0UBGU.html</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>8</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>8</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus can check this flaw with the plugin 15465 (MS NNTP Vulnerability (883935)). An exploit has been published on SecuriTeam.com</bug_check_tool>
+<source_cve>CVE-2004-0574</source_cve>
+<source_securityfocus_bid>11379</source_securityfocus_bid>
+<source_secunia_id>12802</source_secunia_id>
+<source_securiteam_url>http://www.securiteam.com/windowsntfocus/6T00C0UBGU.html</source_securiteam_url>
+<source_securitytracker_id>1011631</source_securitytracker_id>
+<source_scip_id>883</source_scip_id>
+<source_heise_news>52083</source_heise_news>
+<source_heise_security>52083</source_heise_security>
+<source_nessus_id>15465</source_nessus_id>
+<source_mssb_id>MS04-036</source_mssb_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>2004-A-0018</source_misc>
+
+

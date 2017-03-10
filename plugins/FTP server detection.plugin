@@ -1,0 +1,40 @@
+<plugin_id>209</plugin_id>
+<plugin_name>FTP server detection</plugin_name>
+<plugin_family>FTP</plugin_family>
+<plugin_created_date>2004/09/13</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.1</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>21</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists FTP server OR ftp. OR *ftp#.*</plugin_procedure_detection>
+<plugin_detection_accuracy>97</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_affected>All ftp servers</bug_affected>
+<bug_not_affected>Other servers and solutions</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>The target is running a ftp service. FTP (file transfer protocol) is a protocol for transferring files between systems. The ftp service is used by many applications for data communications. Some systems also allow users to connect to an ftp server to upload and download files. ftp servers are vulnerable to a wide range of attacks designed to retrieve files without authorization (including password files) and execute commands on other parts of the server. </bug_description>
+<bug_solution>A service if not needed should be de-installed or disabled. If this is not possible, an access control list (ACL) with firewalling should be applied to this port. And if possible change the welcome banner to confuse an attacker and give him false information. Don't allow anonymous ftp access unless it is absolutely necessary. Configure your system to log all ftp accesses and transfers and periodically check these logs for patterns of misuse. Make sure the home directory of your ftp server is not writable and disallow connections from system IDs (including root, uucp, nobody, and bin).</bug_solution>
+<bug_fixing_time>Approx. 2 hours</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Low</bug_severity>
+<bug_popularity>9</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>3</bug_impact>
+<bug_risk>6</bug_risk>
+<bug_netrecon_rating>14</bug_netrecon_rating>
+<bug_check_tool>Nessus and Symantec NetRecon are able to do a similar or the same and further checks.</bug_check_tool>
+<source_cve>CVE-1999-0614</source_cve>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

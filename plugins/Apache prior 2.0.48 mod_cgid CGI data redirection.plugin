@@ -1,0 +1,49 @@
+<plugin_id>257</plugin_id>
+<plugin_name>Apache prior 2.0.48 mod_cgid CGI data redirection</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_created_date>2004/09/21</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/14</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1. Improved the pattern matching and introduced the plugin changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send HEAD / HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/1.[0-1] ### *Server: Apache/[0-1].* OR HTTP/1.[0-1] ### *Server: Apache/2.0.[0-3]* OR HTTP/1.[0-1] ### *Server: Apache/2.0.4[0-7]*</plugin_procedure_detection>
+<plugin_detection_accuracy>70</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_published_email>info at apache dot org</bug_published_email>
+<bug_published_web>http://www.apache.org</bug_published_web>
+<bug_published_company>Apache Team</bug_published_company>
+<bug_published_date>2003/10/29</bug_published_date>
+<bug_advisory>http://www.apache.org/dist/httpd/CHANGES_2.0</bug_advisory>
+<bug_produced_name>Apache Software Foundation</bug_produced_name>
+<bug_produced_email>apache at apache dot org</bug_produced_email>
+<bug_produced_web>http://httpd.apache.org</bug_produced_web>
+<bug_affected>Apache prior 2.0.48 with mod_cgid</bug_affected>
+<bug_not_affected>Apache 2.0.48 and newer or other solutions</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>The remote host is running an Apache web server. It has been reported that in Apache web server prior 2.0.48 has a vulnerability in the module mod_cgid when the threaded MPM is used. This issue may let an attacker redirect CGI data. Depending on the context of the data being redirected, this could potentially expose sensitive information or incorrectly grant unauthorized access.</bug_description>
+<bug_solution>If the web server is not used it should be de-installed or de-activated. Install the newest patch or bugfix to solve the problem or upgrade to the latest software version which is not vulnerable anymore. To make it harder to find the server the daemon could be configured to listen at another port (e.g. 8081). Alternation of the application banner can confuse an attacker and let him determine the wrong software. Additionally limit unwanted connections and communications with firewalling.</bug_solution>
+<bug_fixing_time>Approx. 2 hours</bug_fixing_time>
+<bug_exploit_availability>No</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/8926/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>5</bug_popularity>
+<bug_simplicity>6</bug_simplicity>
+<bug_impact>7</bug_impact>
+<bug_risk>6</bug_risk>
+<source_cve>CAN-2003-0789</source_cve>
+<source_securityfocus_bid>8926</source_securityfocus_bid>
+<source_rhsa_id>RHSA-2003-320</source_rhsa_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.securityfocus.com/advisories/6012</source_misc>
+

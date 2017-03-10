@@ -1,0 +1,40 @@
+<plugin_id>142</plugin_id>
+<plugin_name>MLdonkey web interface wml files detection</plugin_name>
+<plugin_family>Peer-to-Peer</plugin_family>
+<plugin_created_date>2004/09/05</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.1</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>4080</plugin_port>
+<plugin_procedure_detection>open|send HEAD /wap.wml HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/1.1 200 </plugin_procedure_detection>
+<plugin_detection_accuracy>98</plugin_detection_accuracy>
+<plugin_comment>This script is not very useful because mldonkey only allows connections from localhost by default.</plugin_comment>
+<bug_affected>MLdonkey</bug_affected>
+<bug_not_affected>Other peer-to-peer solutions</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>MLdonkey is a peer-to-peer software to sharing files. An open port tcp/4080 and the returning banner may indicate the existence of the web interface. A successfull connection attempt for the file /wap.wml indicates the presence of wml files for connections over mobile wap. MLdonkey may be illegal in the environment.</bug_description>
+<bug_solution>Disable MLdonky if not allowed nor needed. If MLdonkey should run then filter incoming traffic on port tcp/4080 to prevent unwanted access to the web interface.</bug_solution>
+<bug_fixing_time>15 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>7</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>6</bug_impact>
+<bug_risk>6</bug_risk>
+<bug_nessus_risk>Medium</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do a similar check.</bug_check_tool>
+<source_nessus_id>11125</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

@@ -1,0 +1,47 @@
+<plugin_id>18</plugin_id>
+<plugin_name>Cisco port tcp/7161 carriage return Denial of Service</plugin_name>
+<plugin_family>Network devices</plugin_family>
+<plugin_created_date>2003/11/13</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.3</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.3.</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>7161</plugin_port>
+<plugin_procedure_detection>open|sleep|send \n|sleep 5|close|open|sleep 10|close|icmp_alive</plugin_procedure_detection>
+<plugin_procedure_exploit>open|sleep|send \n|sleep 5|close|open|sleep 10|close|icmp_alive</plugin_procedure_exploit>
+<plugin_detection_accuracy>30</plugin_detection_accuracy>
+<plugin_exploit_accuracy>30</plugin_exploit_accuracy>
+<plugin_comment>This plugin can cause a denial of service against the vulnerable target. Use the check with cause.</plugin_comment>
+<bug_produced_name>Cisco Systems</bug_produced_name>
+<bug_produced_email>info at cisco dot com</bug_produced_email>
+<bug_produced_web>http://www.cisco.com</bug_produced_web>
+<bug_affected>Cisco routers</bug_affected>
+<bug_vulnerability_class>Denial Of Service</bug_vulnerability_class>
+<bug_description>According to ID CSCdi74333 it is possible to crash a Cisco device connecting to port tcp/7161 and sending a carriage return.</bug_description>
+<bug_solution>Filter incoming traffic on port tcp/7161 and upgrade your Cisco firmware.</bug_solution>
+<bug_fixing_time>30 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/705/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>No</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do the same check.</bug_check_tool>
+<source_cve>CVE-1999-0430</source_cve>
+<source_securityfocus_bid>705</source_securityfocus_bid>
+<source_nessus_id>10046</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

@@ -1,0 +1,40 @@
+<plugin_id>115</plugin_id>
+<plugin_name>Titan FTP Server prior 3.22 CWD heap overflow</plugin_name>
+<plugin_family>FTP</plugin_family>
+<plugin_created_date>2004/09/01</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.1</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>21</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists *220*Titan FTP Server [0-2]* OR *220*Titan FTP Server 3.[0-2]*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>This plugin is inspired by the Nessus plugin 14591 and some projects by friends (e.g. BED by Martin J. Münch and Eric Sesterhenn).</plugin_comment>
+<bug_vulnerability_class>Buffer Overflow</bug_vulnerability_class>
+<bug_description>The target ftp server seems to be running a Titan FTP Server prior 3.22 which is vulnerable to a buffer overflow in the CWD command. This may be used for a denial of service or to run arbitrary code within the context of the server system. An attacker may gain elevated privileges and completely compromise the target host.</bug_description>
+<bug_solution>Install the patches for the affected version or upgrade to the latest software version. An Intrusion Prevention System (IPS) may also be able to prevent buffer overflow vulnerabilities as like this one. The ftp server should be deactivated or de-installed if not necessary. To make it harder to find the server the daemon could be configured to listen at another port (e.g. 8021). Try to prevent unwanted connection attempts by filtering traffic with firewalling. Alternation of the application banner can confuse an attacker and let him determine the wrong software.</bug_solution>
+<bug_fixing_time>Approx. 1 hour</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.snake-basket.de/bed.html</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do the same check based on banner-grabbing. See the Nessus plugin ID for more details. Also BED by Eric Sesterhenn and Martin J. Münch can verify/exploit these kinds of overflow vulnerabilities automaticly.</bug_check_tool>
+<source_securityfocus_bid>11069</source_securityfocus_bid>
+<source_nessus_id>14591</source_nessus_id>
+<source_literature>Hacking Intern - Angriffe, Strategien, Abwehr, Marc Ruef, Marko Rogge, Uwe Velten and Wolfram Gieseke, November 1, 2002, Data Becker, Düsseldorf, ISBN 381582284X</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

@@ -1,0 +1,49 @@
+<plugin_id>208</plugin_id>
+<plugin_name>Novell Netware 5.1 and 6.0 Netbasic Scripting Server %5C directory traversal</plugin_name>
+<plugin_family>Netware</plugin_family>
+<plugin_created_date>2004/09/13</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/14</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1. Improved the pattern matching and introduced the plugin changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send GET /nsn/..%5Cutil/chkvol.bas HTTP/1.0\n\n|sleep|close|pattern_exists Statistics for volume OR used by files</plugin_procedure_detection>
+<plugin_detection_accuracy>98</plugin_detection_accuracy>
+<plugin_comment>Check is copied by the Nessus plugin (see Nessus ID listed in the sources).</plugin_comment>
+<bug_published_name>Rain Forrest Puppy</bug_published_name>
+<bug_published_email>rfp at wiretrip dot net</bug_published_email>
+<bug_published_web>http://www.wiretrip.net</bug_published_web>
+<bug_published_company>rfp.labs</bug_published_company>
+<bug_published_date>2002/08/20</bug_published_date>
+<bug_advisory>http://www.securityfocus.com/archive/1/288234</bug_advisory>
+<bug_affected>Novell Netware 5.1 and 6.0 and Novell Small Business Suite 5.1 and 6.0</bug_affected>
+<bug_not_affected>Other solutions</bug_not_affected>
+<bug_vulnerability_class>Directory Traversal</bug_vulnerability_class>
+<bug_description>It is possible to escape out of the root directory of the scripting server by substituting a forward or backward slash for %5C. As a result, system information, such as environment and user information, could be obtained from the Netware server.</bug_description>
+<bug_solution>The server should be deactivated or de-installed if not necessary. Apply the relevant patch (http://support.novell.com/servlet/filedownload/ftf/) and remove default files from the web server. Also, ensure the RCONSOLE password is encrypted and utilize a password protected screensaver for console access. To make it harder to find the server the daemon could be configured to listen at another port (e.g. 8081). Try to prevent unwanted connection attempts by filtering traffic with firewalling. Alternation of the application banner can confuse an attacker and let him determine the wrong software.</bug_solution>
+<bug_fixing_time>Approx. 2 hours</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/5523/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>8</bug_popularity>
+<bug_simplicity>9</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>8</bug_risk>
+<bug_nessus_risk>Medium</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do the same check more accurate and with different files. A CGI scanner as like N-Stealth, Whisker or Nikto may be able to detect this flaw too.</bug_check_tool>
+<source_cve>CAN-2002-1417</source_cve>
+<source_securityfocus_bid>5523</source_securityfocus_bid>
+<source_nessus_id>12050</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://support.novell.com/servlet/tidfinder/2963297</source_misc>
+

@@ -1,0 +1,35 @@
+<plugin_id>324</plugin_id>
+<plugin_name>JanaServer prior 2.4.5 malformed request denial of service</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_created_date>2005/01/09</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc.ruef at computec.ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_version>1.0</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send HEAD / HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# ###*Server: Jana-Server/[0-1].* OR HTTP/#.# ###*Server: Jana-Server/2.[0-3].* OR HTTP/#.# ###*Server: Jana-Server/2.4.[0-5]*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>The NASL script is Copyright (C) 2004 Tenable Network Security</plugin_comment>
+<bug_vulnerability_class>Denial Of Service</bug_vulnerability_class>
+<bug_description>The remote host is running a version of the JanaServer which is vulnerable  to various denial of service vulnerabilities. An attacker may exploit these vulnerabilities by sending a malformed request to the remote service and cause it to enter an infinite loop, thus refusing connections and using 100% of the CPU of the remote host.</bug_description>
+<bug_solution>Upgrade to JanaServer 2.4.5 or newer.</bug_solution>
+<bug_fixing_time>Approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>Maybe</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/11780/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>3</bug_popularity>
+<bug_simplicity>4</bug_simplicity>
+<bug_impact>7</bug_impact>
+<bug_risk>5</bug_risk>
+<bug_nessus_risk>Medium</bug_nessus_risk>
+<bug_check_tool>Nessus can check this flaw with the plugin 15862 (JanaServer Multiple DoS).</bug_check_tool>
+<source_securityfocus_bid>11780</source_securityfocus_bid>
+<source_nessus_id>15862</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+
+

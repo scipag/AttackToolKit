@@ -1,0 +1,40 @@
+<plugin_id>207</plugin_id>
+<plugin_name>Novell Netware 6.0 Apache Tomcat directory traversal</plugin_name>
+<plugin_family>Netware</plugin_family>
+<plugin_created_date>2004/09/13</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/14</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1. Improved the pattern matching and introduced the plugin changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_exploit>open|send GET /examples/jsp/source.jsp?%2e%2e/%2e%2e/%2e%2e/%2e%2e/system/autoexec.ncf HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# ### *SYS:\*</plugin_procedure_exploit>
+<plugin_exploit_accuracy>99</plugin_exploit_accuracy>
+<plugin_comment>Check is copied by the Nessus plugin (see Nessus ID listed in the sources).</plugin_comment>
+<bug_affected>Novell Netware 6.0 with Apache Tomcat</bug_affected>
+<bug_not_affected>Other solutions</bug_not_affected>
+<bug_vulnerability_class>Directory Traversal</bug_vulnerability_class>
+<bug_description>The Apache Tomcat server distributed with Netware 6.0 has a directory traversal vulnerability. As a result, sensitive information could be obtained from the Netware server, such as the RCONSOLE password located in AUTOEXEC.NCF.</bug_description>
+<bug_solution>The server should be deactivated or de-installed if not necessary. Remove default files from the web server. Also, ensure the RCONSOLE password is encrypted and utilize a password protected screensaver for console access. To make it harder to find the server the daemon could be configured to listen at another port (e.g. 8081). Try to prevent unwanted connection attempts by filtering traffic with firewalling. Alternation of the application banner can confuse an attacker and let him determine the wrong software.</bug_solution>
+<bug_fixing_time>Approx. 2 hours</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>8</bug_popularity>
+<bug_simplicity>9</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>8</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do the same check. A CGI scanner as like N-Stealth, Whisker or Nikto may be able to detect this flaw too.</bug_check_tool>
+<source_nessus_id>12119</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

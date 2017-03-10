@@ -1,0 +1,7 @@
+<name>SMTP detected</name>
+<version>1.0</version>
+<create_date>2003.12.07</create_date>
+<created_by>Marc Ruef <marc.ruef@computec.ch> http://www.computec.ch</created_by>
+<trigger>SMTP</trigger>
+<description>The string 'SMTP' could be found in the response. This may indicate that the target port provides the smtp (Simple Mail Transfer Protocol) service.</description>
+<suggestion>It is suggested to modify the wanted mail server checks to audit this port for further generic vulnerabilities.</suggestion>

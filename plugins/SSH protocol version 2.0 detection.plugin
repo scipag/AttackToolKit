@@ -1,0 +1,42 @@
+<plugin_id>163</plugin_id>
+<plugin_name>SSH protocol version 2.0 detection</plugin_name>
+<plugin_family>Enumeration</plugin_family>
+<plugin_created_date>2004/09/07</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.2</plugin_version>
+<plugin_changelog>Added NetRecon rating in version 1.1. Corrected the plugin structure and added the accuracy values in 1.2</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>22</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists SSH-2.0-*</plugin_procedure_detection>
+<plugin_detection_accuracy>87</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_affected>Usually all SSH daemons</bug_affected>
+<bug_not_affected>Specialized and hardened SSH daemons</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>The server is running a SSH daemon (Secure Shell). This is a terminal emulation with authentication and encryption. The banner tells the user which SSH protocol version are used. In this case 2.0 is supported. This information may be usefull to start further enumeration or attacks.</bug_description>
+<bug_solution>A service if not needed should be de-installed or disabled. If this is not possible, an access control list (ACL) with firewalling should be applied to this port.</bug_solution>
+<bug_fixing_time>Approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.rapid7.com/Product-Download.html</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Low</bug_severity>
+<bug_popularity>4</bug_popularity>
+<bug_simplicity>6</bug_simplicity>
+<bug_impact>3</bug_impact>
+<bug_risk>4</bug_risk>
+<bug_nessus_risk>None</bug_nessus_risk>
+<bug_netrecon_rating>39</bug_netrecon_rating>
+<bug_check_tool>Nessus is able to do the same check.</bug_check_tool>
+<source_nessus_id>10881</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.cert.garr.it/alerts/msg00165.html</source_misc>
+

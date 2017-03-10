@@ -1,0 +1,40 @@
+<plugin_id>71</plugin_id>
+<plugin_name>Oracle 9iAS iSQLplus cross site scripting</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_created_date>2004/03/22</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/14</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.2. Improved the pattern matching and introduced the plugin changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_exploit>open|send /isqlplus?action=logon&username=joe%22<script>atk</script>&password=test\n\n|sleep|close|pattern_exists HTTP/#.# ### *<script>atk</script>*</plugin_procedure_exploit>
+<plugin_exploit_accuracy>99</plugin_exploit_accuracy>
+<plugin_comment>Check is copied from the Nessus plugin.</plugin_comment>
+<bug_advisory>http://www.securitytracker.com/alerts/2004/Jan/1008838.html</bug_advisory>
+<bug_affected>Oracle 9iAS</bug_affected>
+<bug_vulnerability_class>Cross Site Scripting</bug_vulnerability_class>
+<bug_description>The login-page of Oracle9i iSQLplus allows the injection of HTML and Javascript code via the username and password parameters.</bug_description>
+<bug_solution>No solution known yet.</bug_solution>
+<bug_fixing_time>1 hour</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>7</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>7</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>Medium</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do the same check.</bug_check_tool>
+<source_nessus_id>12112</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

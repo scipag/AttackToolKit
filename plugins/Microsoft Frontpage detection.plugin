@@ -1,0 +1,39 @@
+<plugin_id>111</plugin_id>
+<plugin_name>Microsoft Frontpage detection</plugin_name>
+<plugin_family>CGI</plugin_family>
+<plugin_created_date>2004/08/31</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/14</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1. Improved the pattern matching and introduced the plugin changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|sleep|send POST /_vti_bin/shtml.dll/_vti_rpc HTTP/1.0\nConnection: Keep-Alive\r\nDate: Mon, 23 Mar 2003 01:23:42 GMT\nMIME-Version: 1.0\r\nX-Vermeer-Content-Type: application/x-www-form-urlencoded\n\nmethod=open+service%3a3%2e0%2e2%2e1105&service%5fname=%2f\n|sleep|close|pattern_exists HTTP/#.# ### *<li>msg=The user*</plugin_procedure_detection>
+<plugin_detection_accuracy>99</plugin_detection_accuracy>
+<plugin_comment>Check is copied from the Nessus plugin (see Nessus ID listed in the sources).</plugin_comment>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>The remote web server appears to be running with the Frontpage extensions. Frontpage allows remote web developers and administrators to modify web content from a remote location.  While this is a fairly typical scenario on an internal Local Area Network, the Frontpage extensions should not be available to anonymous users via the Internet (or any other untrusted 3rd party network). You should double check the configuration since a lot of security problems have been found with FrontPage when the configuration file is not well set up.</bug_description>
+<bug_solution>Install the patches for the affected version or upgrade to the latest software version. The web server should be deactivated or de-installed if not necessary. To make it harder to find the server the daemon could be configured to listen at another port (e.g. 8081). Try to prevent unwanted connection attempts by filtering traffic with firewalling. Alternation of the application banner can confuse an attacker and let him determine the wrong software.</bug_solution>
+<bug_fixing_time>Approx. 2 hours</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>7</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>7</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do the same check very accurate. See the Nessus plugin ID for more details. Furthermore Symantec NetRecon 3.5 and 3.6 may be able to do a similar check.</bug_check_tool>
+<source_cve>CAN-2000-0114</source_cve>
+<source_nessus_id>10077</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

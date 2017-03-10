@@ -1,0 +1,39 @@
+<plugin_id>341</plugin_id>
+<plugin_name>phpMyAdmin prior 2.6.0-pl2 remote command execution</plugin_name>
+<plugin_family>CGI</plugin_family>
+<plugin_created_date>2005/01/09</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc.ruef at computec.ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_version>1.0</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send GET /main.php HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# 200 *Welcome *to *phpMyAdmin*2.[0-5].*</h1>* OR HTTP/#.# 200 *Welcome *to *phpMyAdmin*2.6.0*</h1>* OR HTTP/#.# 200 *Welcome *to *phpMyAdmin*2.6.0-pl1*</h1>*</plugin_procedure_detection>
+<plugin_detection_accuracy>79</plugin_detection_accuracy>
+<plugin_comment>The NASL script is Copyright (C) 2004 David Maciejak</plugin_comment>
+<bug_published_name>phpMyAdmin team</bug_published_name>
+<bug_affected>phpMyAdmin prior 2.6.0-pl2</bug_affected>
+<bug_not_affected>phpMyAdmin newer than 2.6.0-pl2</bug_not_affected>
+<bug_false_positives>The pattern matching is not so accurate because the formatting of the version information is not known.</bug_false_positives>
+<bug_vulnerability_class>Unknown</bug_vulnerability_class>
+<bug_description>The remote host is running phpMyAdmin, an open-source software written in PHP to handle the administration of MySQL over the Web. The remote version of this software is vulnerable to arbitrary command execution due to a lack of user-supplied data sanitization.</bug_description>
+<bug_solution>Upgrade to version 2.6.0-pl2 or newer.</bug_solution>
+<bug_fixing_time>Approx. 20 minutes</bug_fixing_time>
+<bug_exploit_availability>Maybe</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/11391/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>6</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus can check this flaw with the plugin 15478 (phpMyAdmin remote command execution).</bug_check_tool>
+<source_securityfocus_bid>11391</source_securityfocus_bid>
+<source_nessus_id>15478</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+
+

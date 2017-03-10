@@ -1,0 +1,37 @@
+<plugin_id>338</plugin_id>
+<plugin_name>Cyrus IMAP server prior 2.1.11 pre-login buffer overflow</plugin_name>
+<plugin_family>SMTP</plugin_family>
+<plugin_created_date>2005/01/09</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc.ruef at computec.ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_version>1.0</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>143</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists *OK*Cyrus IMAP4 v[0-1].*server ready* OR *OK*Cyrus IMAP4 v2.0.#*server ready* OR *OK*Cyrus IMAP4 v2.1.[0-9] *server ready* OR *OK*Cyrus IMAP4 v2.1.1[0-1]*server ready*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>The NASL script is Copyright (C) 2002 Paul Johnston, Westpoint Ltd</plugin_comment>
+<bug_advisory>http://online.securityfocus.com/archive/1/301864</bug_advisory>
+<bug_produced_name>Cyrus</bug_produced_name>
+<bug_affected>Cyrus IMAP server prior 2.1.11</bug_affected>
+<bug_not_affected>Cyrus IMAP server newer than 2.1.11</bug_not_affected>
+<bug_vulnerability_class>Buffer Overflow</bug_vulnerability_class>
+<bug_description>According to its banner, the remote Cyrus IMAP server is vulnerable to a pre-login buffer overrun. An attacker without a valid login could exploit this, and would be able to execute arbitrary commands as the owner of the Cyrus process. This would allow full access to all users' mailboxes. More information : http://online.securityfocus.com/archive/1/301864</bug_description>
+<bug_solution>If possible, upgrade to an unaffected version. However, at the time of writing no official fix was available. There is a source patch against 2.1.10 in the Bugtraq report.</bug_solution>
+<bug_fixing_time>Approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>Maybe</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus can check this flaw with the plugin 11196 (Cyrus IMAP pre-login buffer overrun).</bug_check_tool>
+<source_nessus_id>11196</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+
+

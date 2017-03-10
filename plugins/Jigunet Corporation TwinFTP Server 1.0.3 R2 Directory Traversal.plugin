@@ -1,0 +1,44 @@
+<plugin_id>234</plugin_id>
+<plugin_name>Jigunet Corporation TwinFTP Server 1.0.3 R2 Directory Traversal</plugin_name>
+<plugin_family>FTP</plugin_family>
+<plugin_created_date>2004/09/13</plugin_created_date>
+<plugin_created_name>Nico 'Triplex' Spicher</plugin_created_name>
+<plugin_created_email>Triplex at IT-Helpnet dot de</plugin_created_email>
+<plugin_created_web>http://triplex.it-helpnet.de/</plugin_created_web>
+<plugin_created_company>http://www.it-helpnet.de/</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.2</plugin_version>
+<plugin_changelog>Made some corrections and enhancements in version 1.1. Corrected the plugin structure and added the accuracy values in 1.2</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>21</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists 220 TwinFTP Server Standard 1.0.3 R2 (win32)</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK-Plugin-Creator [http://triplex.it-helpnet.de].</plugin_comment>
+<bug_published_name>Tan Chew Keong</bug_published_name>
+<bug_published_email>chewkeong@security.org.sg</bug_published_email>
+<bug_published_web>http://www.security.org.sg/</bug_published_web>
+<bug_published_company>SIG^2 Vulnerability Research Advisory</bug_published_company>
+<bug_published_date>2004/09/12</bug_published_date>
+<bug_advisory>http://www.security.org.sg/vuln/twinftp103r2.html</bug_advisory>
+<bug_affected>Jigunet Corporation TwinFTP Server 1.0.3 R2</bug_affected>
+<bug_not_affected>Jigunet Corporation TwinFTP Server 1.0.3 R3 and newer or other ftp servers</bug_not_affected>
+<bug_vulnerability_class>Directory Traversal</bug_vulnerability_class>
+<bug_description>Tan Chew Keong has reported a vulnerability in Twin FTP Server, which can be exploited by malicious users to access files in arbitrary locations on a vulnerable system. The vulnerability is caused due to an input validation error within the processing of arguments passed via the CWD, STOR and RETR FTP commands.</bug_description>
+<bug_solution>Upgrade to Version 1.0.3 R3 that is released on 10 Sep 2004</bug_solution>
+<bug_fixing_time>Approx. 10 minutes</bug_fixing_time>
+<bug_exploit_availability>Maybe</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>3</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>3</bug_risk>
+<source_secunia_id>12511</source_secunia_id>
+<source_literature>Hacking Intern - Angriffe, Strategien, Abwehr, Marc Ruef, Marko Rogge, Uwe Velten and Wolfram Gieseke, November 1, 2002, Data Becker, Düsseldorf, ISBN 381582284X</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

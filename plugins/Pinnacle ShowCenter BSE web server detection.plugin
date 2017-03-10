@@ -1,0 +1,44 @@
+<plugin_id>219</plugin_id>
+<plugin_name>Pinnacle ShowCenter BSE web server detection</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_created_date>2004/09/10</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.2</plugin_version>
+<plugin_changelog>Added SecurityTracker ID in version 1.1. Corrected the plugin structure and added the accuracy values in 1.2</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>8000</plugin_port>
+<plugin_procedure_detection>open|send GET /index.html HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/1.0 200 OK*Server: BSE 1.0.0.1*Pinnacle ShowCenter*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>The server is usually bound to the official address (e.g. 192.168.0.11) and not the loopback address (127.0.0.1). This may affect localhost audits. The pattern is highly accurate but and may also detect newer and slightly modified BSE server versions.</plugin_comment>
+<bug_published_name>Marc Ruef</bug_published_name>
+<bug_published_email>marc dot ruef at computec.ch</bug_published_email>
+<bug_published_web>http://www.computec.ch</bug_published_web>
+<bug_published_company>computec.ch</bug_published_company>
+<bug_published_date>2004/09/10</bug_published_date>
+<bug_advisory>http://www.computec.ch/projekte/atk/</bug_advisory>
+<bug_affected>Pinnacle ShowCenter</bug_affected>
+<bug_not_affected>Other solutions</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>The remote system is running the Pinnacle ShowCenter. This is a straming server that comes with a web GUI that is provided with a HTTP server named BSE. An attacker may use this information to start further enumeration or dedicated attacks.</bug_description>
+<bug_solution>Upgrade the affected software. The server should be deactivated or de-installed if not necessary. To make it harder to find the server the daemon could be configured to listen at another port (e.g. 8081). Try to prevent unwanted connection attempts by filtering traffic with firewalling. Alternation of the application banner can confuse an attacker and let him determine the wrong software.</bug_solution>
+<bug_fixing_time>Approx. 15 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Low</bug_severity>
+<bug_popularity>1</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>5</bug_impact>
+<bug_risk>4</bug_risk>
+<source_securitytracker_id>1011379</source_securitytracker_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

@@ -1,0 +1,7 @@
+<name>Microsoft detected</name>
+<version>1.0</version>
+<create_date>2003.12.12</create_date>
+<created_by>Marc Ruef <marc.ruef@computec.ch> http://www.computec.ch</created_by>
+<trigger>Microsoft OR MS</trigger>
+<description>A string could be found that indicate that the american company Microsoft has developed the software. Most of the Microsoft software is only commercially available (no Freeware or open-source). So it is not possible to check the source code for possible flaws.</description>
+<suggestion>Try to inform you who is the developer and distributor of the software. Check the handbooks, web site for further details on the product. Sometimes it is very useful to ask the company directly over an email if something is not clear.</suggestion>

@@ -1,0 +1,38 @@
+<plugin_id>13</plugin_id>
+<plugin_name>HTTP /etc/passwd</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_created_date>2003/11/13</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.3. Improved the pattern matching and added the changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send GET /etc/passwd HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# ### *root:*</plugin_procedure_detection>
+<plugin_detection_accuracy>98</plugin_detection_accuracy>
+<plugin_comment>Many administrators create an /etc/passwd to fool attackers. Verify the usefullness of the loadable passwd file.</plugin_comment>
+<bug_affected>Web servers with public /etc/passwd.</bug_affected>
+<bug_not_affected>Web servers without exposed sensitive data.</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>A file named /etc/passwd could be detected on the web server. This file may provide sensitive user data. An attacker may use these to start further attacks.</bug_description>
+<bug_solution>Do not provide sensitive data unsecured over the world wide web. Delete the file if not needed on this place. If the file should be reached try to realize limited access (htaccess authentication or firewalling).</bug_solution>
+<bug_fixing_time>15 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>9</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>8</bug_risk>
+<bug_check_tool>Most CGI scanners are able to do this check. For example N-Stealth, Whisker and Nikto.</bug_check_tool>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

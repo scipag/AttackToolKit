@@ -1,0 +1,37 @@
+<plugin_id>325</plugin_id>
+<plugin_name>phpCMS prior 1.2.1pl1 parser.php cross site scripting</plugin_name>
+<plugin_family>CGI</plugin_family>
+<plugin_created_date>2005/01/09</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc.ruef at computec.ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_version>1.0</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_exploit>open|send /parser/parser.php?file=<script>atk</script> HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# ### *<script>atk</script>*</plugin_procedure_exploit>
+<plugin_exploit_accuracy>98</plugin_exploit_accuracy>
+<plugin_comment>The NASL script is Copyright (C) 2004 David Maciejak</plugin_comment>
+<bug_published_name>Cyrille Barthelemy</bug_published_name>
+<bug_published_email>cb-publicbox at ifrance.com</bug_published_email>
+<bug_vulnerability_class>Cross Site Scripting</bug_vulnerability_class>
+<bug_description>The remote host runs phpCMS, a content management system written in PHP. This version is vulnerable to cross-site scripting due to a lack of sanitization of user-supplied data in parser.php script. Successful exploitation of this issue may allow an attacker to execute malicious script code on a vulnerable server.</bug_description>
+<bug_solution>Upgrade to version 1.2.1pl1 or newer.</bug_solution>
+<bug_fixing_time>Approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/11765/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>7</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>Medium</bug_nessus_risk>
+<bug_check_tool>Nessus can check this flaw with the plugin 15850 (phpCMS XSS).</bug_check_tool>
+<source_securityfocus_bid>11765</source_securityfocus_bid>
+<source_nessus_id>15850</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+
+

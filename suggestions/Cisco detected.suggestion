@@ -1,0 +1,7 @@
+<name>Cisco detected</name>
+<version>1.0</version>
+<create_date>2003.12.07</create_date>
+<created_by>Marc Ruef <marc.ruef@computec.ch> http://www.computec.ch</created_by>
+<trigger>Cisco</trigger>
+<description>The string 'Cisco' could be found in the response. This may indicate that the target is a Cisco host or router. Cisco is a very popular network company.</description>
+<suggestion>So it is suggested to start specific Cisco and network device checks.</suggestion>

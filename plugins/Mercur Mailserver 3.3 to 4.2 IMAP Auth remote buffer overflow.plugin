@@ -1,0 +1,39 @@
+<plugin_id>83</plugin_id>
+<plugin_name>Mercur Mailserver 3.3 to 4.2 IMAP Auth remote buffer overflow</plugin_name>
+<plugin_family>SMTP</plugin_family>
+<plugin_created_date>2004/03/23</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.2</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.2</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>25</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists 220 *MERCUR SMTP-Server (v3.3* OR 220 *MERCUR SMTP-Server (v4.0* OR 220 *MERCUR SMTP-Server (v4.2*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>Atrium Software MERCUR Mailserver 4.2 with SP3a is the first version that is not vulnerable. This plugin is not able to detect the existence of the installed SP3a. Please verify this for yourself to eliminate a false-positive.</plugin_comment>
+<bug_affected>Mercur SMTP-Server 3.3 to 4.2 without SP3a</bug_affected>
+<bug_not_affected>Mercur SMTP-Server 4.2 with SP3a and newer</bug_not_affected>
+<bug_vulnerability_class>Buffer Overflow</bug_vulnerability_class>
+<bug_description>The Mercur Mailserver is a small Mail Transfer Agent (MTA). It has been reported that there is a buffer overflow in the IMAP AUTH command. The issue occurs when an overly long command is submitted. This could lead to privileged access to the vulnerable system.</bug_description>
+<bug_solution>This vulnerability has been resolved in version 4.2 Service Pack 3a. See referenced vendor advisory for additional details.</bug_solution>
+<bug_fixing_time>1 hour</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/8861/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>7</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>7</bug_risk>
+<source_securityfocus_bid>8861</source_securityfocus_bid>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

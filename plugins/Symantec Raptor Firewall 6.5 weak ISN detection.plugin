@@ -1,0 +1,43 @@
+<plugin_id>199</plugin_id>
+<plugin_name>Symantec Raptor Firewall 6.5 weak ISN detection</plugin_name>
+<plugin_family>Firewalls</plugin_family>
+<plugin_created_date>2004/09/09</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/14</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1. Improved the pattern matching and introduced the plugin changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send ATK plugin 199 test request HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/1.1 501 Not Implemented *Simple, Secure Web Server 1.1*</plugin_procedure_detection>
+<plugin_detection_accuracy>70</plugin_detection_accuracy>
+<plugin_comment>Check is inspired by the Nessus plugin.</plugin_comment>
+<bug_affected>Symantec Raptor Firewall 6.5</bug_affected>
+<bug_not_affected>Other solutions and maybe the newer Symantec Enterprise Firewall 7.x</bug_not_affected>
+<bug_vulnerability_class>Weak Authentication</bug_vulnerability_class>
+<bug_description>The target host seems to be a Symantec Raptor Firewall 6.5. This version may be vulnerable to TCP hijacking und spoofing attacks because of weak ISN generation. An attacker may be able to attack the environment over the network.</bug_description>
+<bug_solution>You should upgrade your Symantec Raptor Firewall 6.5 to the new Symantec Enterprise Firewall 7.x or newer. See http://www.symantec.com/techsupp/bulletin/archive/firewall/082002firewall.html for more details.</bug_solution>
+<bug_fixing_time>Approx. 1 hour</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/5387/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>8</bug_popularity>
+<bug_simplicity>5</bug_simplicity>
+<bug_impact>7</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do the same check more accurate.</bug_check_tool>
+<source_cve>CAN-2002-1463</source_cve>
+<source_securityfocus_bid>5387</source_securityfocus_bid>
+<source_nessus_id>11057</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.symantec.com/techsupp/bulletin/archive/firewall/082002firewall.html</source_misc>
+

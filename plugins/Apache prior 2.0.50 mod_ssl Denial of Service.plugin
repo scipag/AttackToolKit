@@ -1,0 +1,52 @@
+<plugin_id>137</plugin_id>
+<plugin_name>Apache prior 2.0.50 mod_ssl Denial of Service</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_created_date>2004/09/02</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/14</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Deleted a not needed sleep command before the send command in version 1.1. Added the ISS X-Force and SecurityFocus BID data in version 1.2. Corrected the bug_published data in version 1.3. Corrected the plugin structure and added the accuracy values in 1.4. Improved the pattern matching and introduced the plugin changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send HEAD / HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/1.[0-1] ### *Server: Apache/2.0.[0-4][0-9]* OR HTTP/1.[0-1] ### *Server: Apache/2.0.50*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_published_name>Mick Wall</bug_published_name>
+<bug_published_email>mick at mickandwendy dot com</bug_published_email>
+<bug_published_web>http://www.mickandwendy.com</bug_published_web>
+<bug_published_date>2004/09/01</bug_published_date>
+<bug_advisory>http://rhn.redhat.com/errata/RHSA-2004-349.html</bug_advisory>
+<bug_produced_name>Apache Software Foundation</bug_produced_name>
+<bug_produced_email>apache at apache dot org</bug_produced_email>
+<bug_produced_web>http://httpd.apache.org</bug_produced_web>
+<bug_affected>Apache web server prior 2.0.50</bug_affected>
+<bug_not_affected>Apache web servers newer than 2.0.50 or other web servers</bug_not_affected>
+<bug_vulnerability_class>Denial Of Service</bug_vulnerability_class>
+<bug_description>The remote host is running an Apache web server prior 2.0.50. The module mod_ssl is vulnerable to a denial of service attack. An attacker can cause a large consumation of CPU usage if closing a SSL connection on a specific situation.</bug_description>
+<bug_solution>If the web server and/or ssh support is not used it should be de-installed or de-activated. Install the newest patch or bugfix to solve the problem or upgrade to the latest software version which is not vulnerable anymore. Additionally limit unwanted connections and communications with firewalling.</bug_solution>
+<bug_fixing_time>Approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>No</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/9826/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>7</bug_popularity>
+<bug_simplicity>6</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>7</bug_risk>
+<source_cve>CAN-2004-0748</source_cve>
+<source_securityfocus_bid>9826</source_securityfocus_bid>
+<source_secunia_id>12434</source_secunia_id>
+<source_scip_id>821</source_scip_id>
+<source_issxforce_id>17200</source_issxforce_id>
+<source_rhsa_id>RHSA-2004-349</source_rhsa_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://nagoya.apache.org/bugzilla/show_bug.cgi?id=29964</source_misc>
+

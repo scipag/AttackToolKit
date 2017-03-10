@@ -1,0 +1,42 @@
+<plugin_id>108</plugin_id>
+<plugin_name>HastyMail prior 1.2.0 HTML attachement script execution</plugin_name>
+<plugin_family>CGI</plugin_family>
+<plugin_created_date>2004/08/26</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/14</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>The check is converted from the Nessus plugin. See the Nessus plugin ID for more details. I increased performance of the pattern matching in version 1.1 because we don't need regulary expressions. Corrected the plugin structure and added the accuracy values in 1.2. Improved the pattern matching and introduced the plugin changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists HTTP/#.# ### *Hastymail 0.#* OR HTTP/#.# ### *Hastymail 1.[0-1].* OR HTTP/#.# ### *Hastymail 1.2.0*</plugin_procedure_detection>
+<plugin_detection_accuracy>82</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_affected>HastyMail prior 1.2.0</bug_affected>
+<bug_not_affected>HastyMail prior newer than 1.2.0</bug_not_affected>
+<bug_vulnerability_class>Cross Site Scripting</bug_vulnerability_class>
+<bug_description>The remote host is running HastyMail, a PHP-based mail client application. There is a flaw in the remote version of this software which may allowan attacker to execute arbitrary javascript code on the hosts of users of this software. To exploit this flaw, an attacker would need to send an email to a victim using HastyMail containing a malicious HTML attachment. When the victim attempts to read the attachment, his browser may attempt to render the HTML file. An attacker may use this flaw to steal the cookies of the victim and therefore get access to his mailbox, or may perform other attacks.</bug_description>
+<bug_solution>Upgrade to HastyMail 1.0.2 or 1.2.0</bug_solution>
+<bug_fixing_time>approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>No</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/8893/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>No</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>3</bug_popularity>
+<bug_simplicity>4</bug_simplicity>
+<bug_impact>6</bug_impact>
+<bug_risk>4</bug_risk>
+<bug_nessus_risk>Medium</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do nearly the same check. See Nessus plugin ID for more details.</bug_check_tool>
+<source_securityfocus_bid>11022</source_securityfocus_bid>
+<source_nessus_id>14370</source_nessus_id>
+<source_literature>Hacking Intern - Angriffe, Strategien, Abwehr, Marc Ruef, Marko Rogge, Uwe Velten and Wolfram Gieseke, November 1, 2002, Data Becker, Düsseldorf, ISBN 381582284X</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

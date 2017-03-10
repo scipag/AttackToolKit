@@ -1,0 +1,46 @@
+<plugin_id>189</plugin_id>
+<plugin_name>ISC INN prior 2.2.2 news articles buffer overflows</plugin_name>
+<plugin_family>Denial of Service</plugin_family>
+<plugin_created_date>2004/09/09</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.1</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>119</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists *20[0-9]*INN 2.[0-1].* OR *20[0-9]*INN 2.2.[0-2]*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>Check is inspired by the Nessus plugin.</plugin_comment>
+<bug_published_date>1999/11/24</bug_published_date>
+<bug_advisory>http://www.securityfocus.com/advisories/2007</bug_advisory>
+<bug_affected>ISC INN prior 2.2.2</bug_affected>
+<bug_not_affected>ISC INN 2.2.2 and newer</bug_not_affected>
+<bug_vulnerability_class>Buffer Overflow</bug_vulnerability_class>
+<bug_description>The remote host is running INN prior 2.2.2. There are some bugs which makes it vulnerable to buffer overflow attacks. An attacker may use corrupt news messages to start denial of service attacks or perhaps to run arbitrary code in the context of the server.</bug_description>
+<bug_solution>You should upgrade to version 2.2.2 or higher. S.u.S.E. has released updated RPMs for S.u.S.E. 6.1, 6.2, and 6.3. Change the application banner of the affected news server to make it harder to run pre-defined and automated attacks against the vulnerability. Also limit unwanted connections and communications with firewalling if possible.</bug_solution>
+<bug_fixing_time>Approx. 45 minutes</bug_fixing_time>
+<bug_exploit_availability>Maybe</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/1249/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>7</bug_popularity>
+<bug_simplicity>6</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do the same check.</bug_check_tool>
+<source_cve>CVE-2000-0360</source_cve>
+<source_securityfocus_bid>1249</source_securityfocus_bid>
+<source_osvdb_id>1353</source_osvdb_id>
+<source_nessus_id>14683</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.securityfocus.com/advisories/1889</source_misc>
+

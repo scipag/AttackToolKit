@@ -1,0 +1,7 @@
+<name>Windows detected</name>
+<version>1.0</version>
+<create_date>2003.12.07</create_date>
+<created_by>Marc Ruef <marc.ruef@computec.ch> http://www.computec.ch</created_by>
+<trigger>Windows</trigger>
+<description>The string 'Windows' could be found in the response. This may indicate that the target is a windows host. Microsoft Windows is a very popular commercial operating system.</description>
+<suggestion>So it is suggested to start specific windows checks.</suggestion>

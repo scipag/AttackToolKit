@@ -1,0 +1,42 @@
+<plugin_id>4</plugin_id>
+<plugin_name>HTTP 404 enumeration</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_created_date>2003/11/10</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Corrected the severity and added the NetRecon rating in version 1.3. Corrected the plugin structure and added the accuracy values in 1.4. Improved the pattern matching and added the changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send HEAD /404check.html HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# 404 *</plugin_procedure_detection>
+<plugin_procedure_exploit>open|send GET /404check.html HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# *Apache/#.* Server at * Port #*</plugin_procedure_exploit>
+<plugin_detection_accuracy>60</plugin_detection_accuracy>
+<plugin_exploit_accuracy>97</plugin_exploit_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_affected>web servers</bug_affected>
+<bug_not_affected>Usually misconfigured web servers</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>The web server responds with an 404 Not Found error message. An attacker may indicate the existence of web documents. He could gather sensitive data.</bug_description>
+<bug_solution>A service if not needed should be de-installed or disabled. If this is not possible, an access control list (ACL) with firewalling should be applied to this port. Do not allow the web server to include sensitive data (e.g. web server name and version) into the 404 Not Found report.</bug_solution>
+<bug_fixing_time>30 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Low</bug_severity>
+<bug_popularity>9</bug_popularity>
+<bug_simplicity>9</bug_simplicity>
+<bug_impact>6</bug_impact>
+<bug_risk>5</bug_risk>
+<bug_netrecon_rating>42</bug_netrecon_rating>
+<bug_check_tool>Many CGI scanners are able to do a similar check.</bug_check_tool>
+<source_cve>CVE-1999-0633</source_cve>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.whitehatsec.com/presentations/Black_Hat_Europe_2001/Black_Hat_Europe2001_Presentation.ppt</source_misc>
+

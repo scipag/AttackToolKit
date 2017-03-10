@@ -1,0 +1,34 @@
+<plugin_id>304</plugin_id>
+<plugin_name>FastCGI sample echo.exe cross site scripting</plugin_name>
+<plugin_family>CGI</plugin_family>
+<plugin_created_date>2005/01/04</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc.ruef at computec.ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_version>1.0</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_exploit>open|send GET /fcgi-bin/echo.exe?foo=<script>atk</script> HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# ### *<script>atk</script>*</plugin_procedure_exploit>
+<plugin_exploit_accuracy>98</plugin_exploit_accuracy>
+<plugin_comment>The NASL script is Copyright (C) 2002 Matt Moore</plugin_comment>
+<bug_affected>FastCGI</bug_affected>
+<bug_vulnerability_class>Cross Site Scripting</bug_vulnerability_class>
+<bug_description>Two sample CGI's supplied with FastCGI are vulnerable to cross-site scripting attacks. FastCGI is an 'open extension to CGI that provides high performance without the limitations of server specific APIs', and is included in the default installation of the 'Unbreakable' Oracle9i Application Server. Various other web servers support the FastCGI extensions (Zeus, Pi3Web etc). Two sample CGI's are installed with FastCGI, (echo.exe and echo2.exe under Windows, echo and echo2 under Unix). Both of these CGI's output a list of environment variables and PATH information for various applications. They also display any parameters that were provided to them. Hence, a cross site scripting attack can be performed via a request.</bug_description>
+<bug_solution>Always remove sample applications from production servers.</bug_solution>
+<bug_fixing_time>Approx. 1 hour</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus can check this flaw with the plugin 10838 (FastCGI samples Cross Site Scripting).</bug_check_tool>
+<source_nessus_id>10838</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+
+

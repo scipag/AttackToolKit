@@ -1,0 +1,36 @@
+<plugin_id>281</plugin_id>
+<plugin_name>LCDproc server newer than 4.0 detection</plugin_name>
+<plugin_family>Network Devices</plugin_family>
+<plugin_created_date>2005/01/02</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc.ruef at computec.ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_version>1.0</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>13666</plugin_port>
+<plugin_procedure_detection>open|send hello\n|sleep|close|pattern_exists connect LCDproc </plugin_procedure_detection>
+<plugin_detection_accuracy>85</plugin_detection_accuracy>
+<plugin_comment>The NASL script is Copyright (C) 2000 SecuriTeam.com</plugin_comment>
+<bug_produced_web>http://lcdproc.omnipotent.net</bug_produced_web>
+<bug_affected>LCDproc server newer than 4.0</bug_affected>
+<bug_not_affected>LCDproc server older than 4.0 or other products</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>LCDproc (http://lcdproc.omnipotent.net) is a system that is used to display system information and other data on an LCD display (or any supported display device, including curses or text). The LCDproc version 4.0 and above uses a client-server protocol, allowing anyone with access to the LCDproc server to modify the displayed content.</bug_description>
+<bug_solution>Disable access to this service from outside by disabling access to TCP port 13666 (default port used)"</bug_solution>
+<bug_fixing_time>Approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Maybe</bug_local>
+<bug_severity>Low</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>4</bug_impact>
+<bug_risk>5</bug_risk>
+<bug_nessus_risk>Low</bug_nessus_risk>
+<bug_check_tool>Nessus can check this flaw with the plugin 10379 (LCDproc server detection).</bug_check_tool>
+<source_nessus_id>10379</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+
+

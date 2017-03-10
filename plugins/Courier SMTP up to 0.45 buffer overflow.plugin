@@ -1,0 +1,42 @@
+<plugin_id>74</plugin_id>
+<plugin_name>Courier SMTP up to 0.45 buffer overflow</plugin_name>
+<plugin_family>SMTP</plugin_family>
+<plugin_created_date>2004/03/22</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.3</plugin_version>
+<plugin_changelog>Changed a pattern-matching error in ATK plugin version 2.1 - It should be working now. Corrected the plugin structure and added the accuracy values in 1.3</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>25</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists 220 *Courier 0.1* OR 220 *Courier 0.2* OR 220 *Courier 0.3* OR 220 *Courier 0.4[1-5]*</plugin_procedure_detection>
+<plugin_detection_accuracy>90</plugin_detection_accuracy>
+<plugin_comment>Check is copied from the Nessus plugin.</plugin_comment>
+<bug_affected>Courier SMTP MTA up to 0.45</bug_affected>
+<bug_not_affected>Courier SMTP MTA 0.45 or newer</bug_not_affected>
+<bug_vulnerability_class>Buffer Overflow</bug_vulnerability_class>
+<bug_description>The remote mail server is the Courier MTA. There is a buffer overflow in the conversions functions of this software which may allow an attacker to execute arbitrary code on this host.</bug_description>
+<bug_solution>Upgrade to version 0.45 or newer. Limit unwanted connections and communications with firewalling.</bug_solution>
+<bug_fixing_time>1 hour</bug_fixing_time>
+<bug_exploit_availability>Maybe</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/9845/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>7</bug_popularity>
+<bug_simplicity>6</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do the same check.</bug_check_tool>
+<source_securityfocus_bid>9845</source_securityfocus_bid>
+<source_nessus_id>12102</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

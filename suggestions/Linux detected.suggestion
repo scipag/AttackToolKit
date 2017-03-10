@@ -1,0 +1,7 @@
+<name>Linux detected</name>
+<version>1.0</version>
+<create_date>2003.12.07</create_date>
+<created_by>Marc Ruef <marc.ruef@computec.ch> http://www.computec.ch</created_by>
+<trigger>Linux</trigger>
+<description>The string 'Linux' could be found in the response. This may indicate that the target is a Linux host. Linux is a very popular open-source (GPL) operating system, developed by Linus Torvalds.</description>
+<suggestion>So it is suggested to start specific Linux and Unix checks.</suggestion>

@@ -1,0 +1,49 @@
+<plugin_id>212</plugin_id>
+<plugin_name>Cat Soft Serv-U FTP server prior 2.5i CWD ..%20 directory traversal</plugin_name>
+<plugin_family>FTP</plugin_family>
+<plugin_created_date>2004/09/13</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.1</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>21</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists 220 Serv-U FTP-Server v2.[0-5]* OR *to /..* OR *to /[a-z]:/* OR *550 /[a-z]:/.*</plugin_procedure_detection>
+<plugin_detection_accuracy>99</plugin_detection_accuracy>
+<plugin_comment>This plugin may be very accurate if not just the banner is analyzed.</plugin_comment>
+<bug_published_name>Zoa_Chien</bug_published_name>
+<bug_published_email>zoachien at securax dot org</bug_published_email>
+<bug_published_web>http://www.securax.org</bug_published_web>
+<bug_published_company>securax.org</bug_published_company>
+<bug_published_date>2000/12/05</bug_published_date>
+<bug_advisory>http://www.securityfocus.com/archive/1/148905</bug_advisory>
+<bug_affected>Serv-U FTP server prior 2.5i</bug_affected>
+<bug_not_affected>Serv-U FTP server newer than 2.5i or other ftp servers</bug_not_affected>
+<bug_vulnerability_class>Directory Traversal</bug_vulnerability_class>
+<bug_description>The Serv-U FTP server is a well-known ftp server for Windows operating systems. It is possible to break out of the remoteFTP chroot by appending %20s in the CWD command.</bug_description>
+<bug_solution>If the ftp server is not used it should be de-installed or de-activated. Install the newest patch or bugfix to solve the problem or upgrade to the latest software version which is not vulnerable anymore. Additionally limit unwanted connections and communications with firewalling.</bug_solution>
+<bug_fixing_time>Approx. 20 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/2052/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>7</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus is able to same check. The attack is very well documented in the original Bugtraq posting.</bug_check_tool>
+<source_cve>CVE-2001-0054</source_cve>
+<source_securityfocus_bid>2052</source_securityfocus_bid>
+<source_nessus_id>10565</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.securityfocus.com/archive/1/149180</source_misc>
+

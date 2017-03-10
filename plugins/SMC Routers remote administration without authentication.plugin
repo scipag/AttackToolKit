@@ -1,0 +1,39 @@
+<plugin_id>186</plugin_id>
+<plugin_name>SMC Routers remote administration without authentication</plugin_name>
+<plugin_family>Network Devices</plugin_family>
+<plugin_created_date>2004/09/07</plugin_created_date>
+<plugin_created_name>Nico 'Triplex' Spicher</plugin_created_name>
+<plugin_created_email>Triplex at IT-Helpnet dot de</plugin_created_email>
+<plugin_created_web>http://triplex.it-helpnet.de</plugin_created_web>
+<plugin_created_company>http://www.it-helpnet.de</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.2</plugin_version>
+<plugin_changelog>Made some slight modifications in version 1.1. Corrected the plugin structure and added the accuracy values in 1.2</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>1900</plugin_port>
+<plugin_procedure_detection>open|send GET / HTTP/1.0\n\n|sleep|close|pattern_exists  200</plugin_procedure_detection>
+<plugin_detection_accuracy>10</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_published_name>user86</bug_published_name>
+<bug_published_email>user86 at earthlink dot net</bug_published_email>
+<bug_affected>SMC Routers 7008ABR, 7004VBR and other models</bug_affected>
+<bug_not_affected>Other routers</bug_not_affected>
+<bug_vulnerability_class>Missing authentication</bug_vulnerability_class>
+<bug_description>SMC broadband routers ship with remote administration (completely passwordless) enabled by default on their port 1900 on the WAN side of the router.</bug_description>
+<bug_solution>Enable FW & forward port 1900 of the router to a non-existent internal IP address.</bug_solution>
+<bug_fixing_time>Aprox. 20 Minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>No</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>4</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>6</bug_risk>
+<source_literature>Hacking Intern - Angriffe, Strategien, Abwehr, Marc Ruef, Marko Rogge, Uwe Velten and Wolfram Gieseke, November 1, 2002, Data Becker, Düsseldorf, ISBN 381582284X</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

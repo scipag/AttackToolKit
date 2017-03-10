@@ -1,0 +1,47 @@
+<plugin_id>226</plugin_id>
+<plugin_name>TYPSoft FTP prior 0.97.5 directory traversal</plugin_name>
+<plugin_family>FTP</plugin_family>
+<plugin_created_date>2004/09/14</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.1</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>21</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists *TYPSoft FTP Server 0.[0-8]* OR *TYPSoft FTP Server 0.9[0-7]*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>Check is inspired by the Nessus plugin (see Nessus ID listed in the sources).</plugin_comment>
+<bug_published_name>Joe Testa</bug_published_name>
+<bug_published_email>joetesta at hushmail dot com</bug_published_email>
+<bug_published_date>2001/02/28</bug_published_date>
+<bug_advisory>http://www.securityfocus.com/archive/1/165820</bug_advisory>
+<bug_affected>TYPSoft FTP prior 0.97.5</bug_affected>
+<bug_not_affected>TYPSoft FTP newer than 0.97.5 or other ftp servers</bug_not_affected>
+<bug_vulnerability_class>Directory Traversal</bug_vulnerability_class>
+<bug_description>The remote host seems to be running TYPSoft FTP, a small FTP server. The software version up to 0.97.5 has a directory traversal vulnerability. An attacker may get access to not shared resources.</bug_description>
+<bug_solution>The server should be deactivated or de-installed if not necessary. If this is not possible, you should upgrade the software to the latest version. To make it harder to find the server the daemon could be configured to listen at another port (e.g. 8021). Try to prevent unwanted connection attempts by filtering traffic with firewalling. Alternation of the application banner can confuse an attacker and let him determine the wrong software.</bug_solution>
+<bug_fixing_time>Approx. 40 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/2489/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>8</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>Medium</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do the same check.</bug_check_tool>
+<source_cve>CAN-2002-0558</source_cve>
+<source_securityfocus_bid>2489</source_securityfocus_bid>
+<source_nessus_id>14706</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.securityfocus.com/archive/1/183917</source_misc>
+

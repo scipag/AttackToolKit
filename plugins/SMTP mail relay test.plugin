@@ -1,0 +1,48 @@
+<plugin_id>156</plugin_id>
+<plugin_name>SMTP mail relay test</plugin_name>
+<plugin_family>SMTP</plugin_family>
+<plugin_created_date>2004/09/07</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.1</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>25</plugin_port>
+<plugin_procedure_exploit>open|sleep|send HELO atk.test\n|sleep|send MAIL FROM:<plugin156@atk.test>\n|sleep|send RCPT TO:<root@localhost>\n|sleep|send DATA\n|sleep|send Date: 11 Feb 81 11:02:11\n|send From: Attack Tool Kit Plugin 156\n|send Subject: The target is allowing mails to be relayed.\n|send .\n|sleep|send QUIT\n|close|pattern_exists *250 *</plugin_procedure_exploit>
+<plugin_exploit_accuracy>99</plugin_exploit_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_published_name>Jonathan B. Postel (+)</bug_published_name>
+<bug_published_web>http://www.isoc.org/postel/</bug_published_web>
+<bug_published_company>Information Sciences Institute, University of Southern California</bug_published_company>
+<bug_published_date>1982/08/01</bug_published_date>
+<bug_advisory>http://www.faqs.org/rfcs/rfc821.html</bug_advisory>
+<bug_affected>Open smtp relays</bug_affected>
+<bug_not_affected>Closed smtp relays (e.g. no anonymous mails or authentication required)</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>The remote host is running a SMTP mail relay. This one could be used to send emails. It may also be possible to specify wrong sender addresses - This could be used to send spam or junk mail.</bug_description>
+<bug_solution>The server should be deactivated or de-installed if not necessary. Do not allow everyone to send emails over your mail relay. And do not allow arbitrary sender addresses to be specified. To make it harder to find the server the daemon could be configured to listen at another port (e.g. 8025). Try to prevent unwanted connection attempts by filtering traffic with firewalling. Alternation of the application banner can confuse an attacker and let him determine the wrong software.</bug_solution>
+<bug_fixing_time>Approx. 2 hours</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/6118/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>9</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>7</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>Low/Medium</bug_nessus_risk>
+<bug_check_tool>Most vulnerability scanners are able to do a similar check.</bug_check_tool>
+<source_cve>CAN-1999-0512</source_cve>
+<source_securityfocus_bid>6118</source_securityfocus_bid>
+<source_nessus_id>10262</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.cs.cf.ac.uk/Dave/PERL/node175.html</source_misc>
+

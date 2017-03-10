@@ -1,0 +1,44 @@
+<plugin_id>265</plugin_id>
+<plugin_name>ICECast AVLlib prior 1.3.12 trailing characters denial of service detection</plugin_name>
+<plugin_family>Misc</plugin_family>
+<plugin_created_date>2004/10/05</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.1</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>8000</plugin_port>
+<plugin_procedure_detection>open|send GET / HTTP/1.0\n\n|sleep|close|pattern_exists *icecast/1.[0-2]* OR *icecast/1.3.0* OR *icecast/1.3.1[0-2]*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>This plugin is inspired by the Nessus plugin.</plugin_comment>
+<bug_affected>ICECast AVLlib prior 1.3.12</bug_affected>
+<bug_not_affected>ICECast AVLlib 1.3.12 and newer or other solutions</bug_not_affected>
+<bug_vulnerability_class>Denial Of Service</bug_vulnerability_class>
+<bug_description>The remote server runs a version of ICECast, an open source streaming audio server, which is older than version 1.3.12. This version is affected by a remote denial of service because Icecast server does not properly sanitize user-supplied input. An remote attacker could send specially crafted URL, by adding '/', '\' or '.' to the end, that may result in a loss of availability for the service.</bug_description>
+<bug_solution>Upgrade the software to the latest version. The server should be deactivated or de-installed if not necessary. To make it harder to find the server the daemon could be configured to listen at another port (e.g. 8081). Try to prevent unwanted connection attempts by filtering traffic with firewalling. Alternation of the application banner can confuse an attacker and let him determine the wrong software.</bug_solution>
+<bug_fixing_time>Approx. 2 hours</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/2933/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do the same check and further testings. The ATK is able to do further checks and exploit the denial of service attack directly.</bug_check_tool>
+<source_cve>CAN-2001-1083</source_cve>
+<source_securityfocus_bid>2933</source_securityfocus_bid>
+<source_osvdb_id>5472</source_osvdb_id>
+<source_nessus_id>15400</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

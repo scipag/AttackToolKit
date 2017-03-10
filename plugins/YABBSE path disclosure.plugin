@@ -1,0 +1,42 @@
+<plugin_id>184</plugin_id>
+<plugin_name>YABBSE path disclosure</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_created_date>2004/09/07</plugin_created_date>
+<plugin_created_name>Nico 'Triplex' Spicher</plugin_created_name>
+<plugin_created_email>Triplex at IT-Helpnet dot de</plugin_created_email>
+<plugin_created_web>http://triplex.it-helpnet.de/</plugin_created_web>
+<plugin_created_company>http://www.it-helpnet.de/</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/14</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Made some slight modifications in version 1.1. Corrected the plugin structure and added the accuracy values in 1.2. Improved the pattern matching and introduced the plugin changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_exploit>open|send GET /Sources/Admin.php HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# ### *Fatal error: Call to undefined function:*</plugin_procedure_exploit>
+<plugin_exploit_accuracy>98</plugin_exploit_accuracy>
+<plugin_comment>This plugin was written with the ATK-Plugin-Creator [http://triplex.it-helpnet.de].</plugin_comment>
+<bug_published_name>y3dips</bug_published_name>
+<bug_published_email>y3dips at echo dot or dot id</bug_published_email>
+<bug_published_web>http://y3dips.echo.or.id</bug_published_web>
+<bug_published_date>2004/08/25</bug_published_date>
+<bug_advisory>http://echo.or.id/adv/adv05-y3dips-2004.txt</bug_advisory>
+<bug_affected>YABBSE all versions</bug_affected>
+<bug_not_affected>Other solutions</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>Script in Sources/Admin.php files are not protected against direct access. A remote user can access the file to cause the system to display an error message that indicates the installation path. The resulting error message will disclose potentially sensitive installation path information to the remote attacker.</bug_description>
+<bug_solution>Disable this suite or upgrade to the latest version and limit unwanted connections and communications with firewalling. Change the default directory of the application to make automated scans harder.</bug_solution>
+<bug_fixing_time>Approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Low</bug_severity>
+<bug_popularity>3</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>4</bug_impact>
+<bug_risk>4</bug_risk>
+<source_literature>Hacking Intern - Angriffe, Strategien, Abwehr, Marc Ruef, Marko Rogge, Uwe Velten and Wolfram Gieseke, November 1, 2002, Data Becker, Düsseldorf, ISBN 381582284X</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

@@ -1,0 +1,39 @@
+<plugin_id>157</plugin_id>
+<plugin_name>Citrix Web PN Server detection</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_created_date>2004/09/07</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/14</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1. Improved the pattern matching and introduced the plugin changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists HTTP/#.# ### *Server: Citrix Web PN Server*</plugin_procedure_detection>
+<plugin_detection_accuracy>98</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_affected>Citrix Web Server</bug_affected>
+<bug_not_affected>Other products</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>Citrix is an add-on for Windows users to remotely connect to a host. Sometimes there are installed the Citrix Web PN Server in an environment. These may be used by an attacker for further analysis.</bug_description>
+<bug_solution>Disable the service if it is not needed. Limit unwanted connections and communications with firewalling.</bug_solution>
+<bug_fixing_time>Approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.gfisoftware.com/lannetscan</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>6</bug_impact>
+<bug_risk>6</bug_risk>
+<bug_check_tool>GFI LANguard is able to detect the web server with the same banner-grabbing.</bug_check_tool>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

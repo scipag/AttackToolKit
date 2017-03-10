@@ -1,0 +1,49 @@
+<plugin_id>237</plugin_id>
+<plugin_name>Apache 2.0.35 to 2.0.50 .htaccess environment variables buffer overflow</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_created_date>2004/09/16</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Enhanced the plugin in version 1.1. Corrected the plugin structure and added the accuracy values in 1.2. Added the product produce information in version 1.3. Enhanced the pattern matching in version 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send HEAD / HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/1.[0-1] ### *Server: Apache/2.0.[3-4][0-9]* OR HTTP/1.[0-1] ### *Server: Apache/2.0.50*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>I am not sure which Apache versions that are affected. http://www.uniras.gov.uk/vuls/2004/403518/ and Secunia are talking about Apache prior 2.0.51 - But the Nessus plugin does only check up to 1.3.31.</plugin_comment>
+<bug_published_company>Swedish IT Incident Centre</bug_published_company>
+<bug_published_date>2004/09/15</bug_published_date>
+<bug_advisory>http://www.uniras.gov.uk/vuls/2004/403518/</bug_advisory>
+<bug_produced_name>Apache Software Foundation</bug_produced_name>
+<bug_produced_email>apache at apache dot org</bug_produced_email>
+<bug_produced_web>http://httpd.apache.org</bug_produced_web>
+<bug_affected>Apache 2.0.35 to 2.0.50</bug_affected>
+<bug_not_affected>Apache web servers newer than 2.0.50 or other web servers</bug_not_affected>
+<bug_vulnerability_class>Denial Of Service</bug_vulnerability_class>
+<bug_description>The remote host is running an Apache web server. The installed version is vulnerable to a buffer overflow attack. A local attacker may be able to run arbitrary code with corrupt .htaccess files. The parsing of environment variables seems to be vulnerable to the attack.</bug_description>
+<bug_solution>If the web server is not used it should be de-installed or de-activated. Install the newest patch or bugfix to solve the problem or upgrade to the latest software version which is not vulnerable anymore. To make it harder to find the server the daemon could be configured to listen at another port (e.g. 8081). Alternation of the application banner can confuse an attacker and let him determine the wrong software. Additionally limit unwanted connections and communications with firewalling.</bug_solution>
+<bug_fixing_time>Approx. 40 minutes</bug_fixing_time>
+<bug_exploit_availability>No</bug_exploit_availability>
+<bug_remote>No</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>6</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<source_cve>CAN-2004-0786</source_cve>
+<source_secunia_id>12540</source_secunia_id>
+<source_scip_id>844</source_scip_id>
+<source_heise_news>51138</source_heise_news>
+<source_heise_security>51138</source_heise_security>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://xforce.iss.net/xforce/xfdb/17413</source_misc>
+

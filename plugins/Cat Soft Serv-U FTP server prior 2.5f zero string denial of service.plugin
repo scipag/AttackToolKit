@@ -1,0 +1,43 @@
+<plugin_id>213</plugin_id>
+<plugin_name>Cat Soft Serv-U FTP server prior 2.5f zero string denial of service</plugin_name>
+<plugin_family>FTP</plugin_family>
+<plugin_created_date>2004/09/13</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.1</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>21</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists 220 Serv-U FTP-Server v2.[0-5]*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>This plugin is not as accurate as like the Nessus plugin because we do not exploit the potential flaw here. It is strange because the SecurityFocus BID could not be found but this one is saved in the Nessus plugin too.</plugin_comment>
+<bug_affected>Serv-U FTP server prior 2.5f</bug_affected>
+<bug_not_affected>Serv-U FTP server newer than 2.5f or other ftp servers</bug_not_affected>
+<bug_vulnerability_class>Denial Of Service</bug_vulnerability_class>
+<bug_description>The Serv-U FTP server is a well-known ftp server for Windows operating systems. It is possible to crash the server by sending more than 5'000 zeros to the target. This vulnerability allows an attacker to prevent you from sharing data through FTP and may even crash this host.</bug_description>
+<bug_solution>If the ftp server is not used it should be de-installed or de-activated. Install the newest patch or bugfix to solve the problem or upgrade to the latest software version which is not vulnerable anymore. Additionally limit unwanted connections and communications with firewalling.</bug_solution>
+<bug_fixing_time>Approx. 20 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/1543/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>7</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus is able to same check and exploit the vulnerability with a denial of service plugin.</bug_check_tool>
+<source_cve>CVE-2000-0837</source_cve>
+<source_securityfocus_bid>1543</source_securityfocus_bid>
+<source_nessus_id>10488</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

@@ -1,0 +1,42 @@
+<plugin_id>133</plugin_id>
+<plugin_name>Finjan SurfinGate ControlPort CONNECT restart command</plugin_name>
+<plugin_family>Firewalls</plugin_family>
+<plugin_created_date>2004/09/02</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.1</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>3128</plugin_port>
+<plugin_procedure_detection>open|send CONNECT localhost:3141 HTTP/1.0\n\n|sleep|close|pattern_exists Proxy-agent: Finjan</plugin_procedure_detection>
+<plugin_detection_accuracy>85</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor and was inspired by Nessus plugin.</plugin_comment>
+<bug_affected>Finjan SurfinGate</bug_affected>
+<bug_not_affected>Perhaps Finjan VItal Security or other proxy solutions</bug_not_affected>
+<bug_vulnerability_class>Weak Authentication</bug_vulnerability_class>
+<bug_description>The target system is running Finjan SurfinGate, a commercial proxy solution. It is possible to use this proxy and force it to connect to itself,to then issue administrative commands to this service. An attacker may use this flaw to force this proxy to restart continuously, although other administrative commands might be executable.</bug_description>
+<bug_solution>Upgrade to the latest software version which is not vulnerable anymore. Limit unwanted connections to the ControlPort 3141 with firewalling.</bug_solution>
+<bug_fixing_time>Approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.nessus.org</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>6</bug_simplicity>
+<bug_impact>7</bug_impact>
+<bug_risk>6</bug_risk>
+<bug_nessus_risk>Medium</bug_nessus_risk>
+<bug_check_tool>Nessus and ATK is able to do the same and further check.</bug_check_tool>
+<source_securityfocus_bid>9478</source_securityfocus_bid>
+<source_nessus_id>12036</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

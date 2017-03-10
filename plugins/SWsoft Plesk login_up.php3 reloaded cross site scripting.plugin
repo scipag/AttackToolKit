@@ -1,0 +1,42 @@
+<plugin_id>109</plugin_id>
+<plugin_name>SWsoft Plesk login_up.php3 reloaded cross site scripting</plugin_name>
+<plugin_family>CGI</plugin_family>
+<plugin_created_date>2004/08/26</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/14</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1. Improved the pattern matching and introduced the plugin changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists *</plugin_procedure_detection>
+<plugin_detection_accuracy>1</plugin_detection_accuracy>
+<plugin_comment>The check is copied from the Nessus plugin. Please check the Nessus plugin ID for more details.</plugin_comment>
+<bug_affected>FreeBSD FTP server</bug_affected>
+<bug_not_affected>Other FTP servers</bug_not_affected>
+<bug_vulnerability_class>Cross Site Scripting</bug_vulnerability_class>
+<bug_description>The remote host is running Plesk Reloaded (from SWsoft), a web based system administration tool. The remote version of this software is vulnerable to a cross-site scripting attack. An attacker can exploit it by compromising the values of the parameter cat_select in login_up.php3. This can be used to take advantage of the trust between a client and server allowing the malicious user to execute malicious JavaScript on the client's machine.</bug_description>
+<bug_solution>The solution should be deactivated or de-installed if not necessary. To make it harder to find the web server the daemon could be configured to listen at another port (e.g. 2280). Try to prevent unwanted connection attempts by filtering traffic with firewalling.</bug_solution>
+<bug_fixing_time>15 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/11024/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>2</bug_popularity>
+<bug_simplicity>9</bug_simplicity>
+<bug_impact>7</bug_impact>
+<bug_risk>5</bug_risk>
+<bug_nessus_risk>Medium</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do nearly the same check. See the Nessus ID for more details.</bug_check_tool>
+<source_securityfocus_bid>11024</source_securityfocus_bid>
+<source_nessus_id>14369</source_nessus_id>
+<source_literature>Hacking Intern - Angriffe, Strategien, Abwehr, Marc Ruef, Marko Rogge, Uwe Velten and Wolfram Gieseke, November 1, 2002, Data Becker, Düsseldorf, ISBN 381582284X</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

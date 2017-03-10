@@ -1,0 +1,48 @@
+<plugin_id>106</plugin_id>
+<plugin_name>Washington University wu-ftpd prior 2.6.2 S/KEY authentication overflow</plugin_name>
+<plugin_family>FTP</plugin_family>
+<plugin_created_date>2004/08/26</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.2</plugin_version>
+<plugin_changelog>The check is converted from the Nessus plugin. See the Nessus plugin ID for more details. Increased the speed of the pattern matching by deleting useless tests. Corrected the plugin structure and added the accuracy values in 1.2</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>21</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists *wu-2.6.[0-2]*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_published_name>Michael Hendrickx and Michal Zalewski (see SecurityFocus.com credits)</bug_published_name>
+<bug_published_date>2004/06/17</bug_published_date>
+<bug_advisory>http://www.securityfocus.com/archive/1/63980/2000-06-04/2000-06-10/0</bug_advisory>
+<bug_affected>Washington University wu-ftpd 2.6.0 to 2.6.2</bug_affected>
+<bug_not_affected>Washington University wu-ftpd newer than 2.6.2</bug_not_affected>
+<bug_vulnerability_class>Buffer Overflow</bug_vulnerability_class>
+<bug_description>The remote Wu-FTPd server seems to be vulnerable to a remote overflow. This version contains a remote overflow if s/key support is enabled. The skey_challenge function fails to perform bounds checking on the name variable resulting in a buffer overflow. With a specially crafted request, an attacker can execute arbitrary code resulting in a loss of integrity and/or availability. It appears that this vulnerability may be exploited prior to authentication. It is reported that S/Key support is not enabled by default, though some operating system distributions which ship Wu-Ftpd may have it enabled.</bug_description>
+<bug_solution>Upgrade to Wu-FTPd 2.6.3 when available or disable SKEY or apply thepatches available at http://www.wu-ftpd.org</bug_solution>
+<bug_fixing_time>approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>No</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/8893/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>3</bug_popularity>
+<bug_simplicity>4</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>5</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do nearly the same check. See Nessus plugin ID for more details.</bug_check_tool>
+<source_cve>CAN-2004-0185</source_cve>
+<source_securityfocus_bid>8893</source_securityfocus_bid>
+<source_osvdb_id>2715</source_osvdb_id>
+<source_nessus_id>14372</source_nessus_id>
+<source_rhsa_id>RHSA-2004:096</source_rhsa_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.securityfocus.com/advisories/6431</source_misc>
+

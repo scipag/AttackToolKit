@@ -1,0 +1,42 @@
+<plugin_id>1</plugin_id>
+<plugin_name>Apache web server detection</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_created_date>2003/11/06</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Title and filename changed and added Symantec rating in version 1.4. Corrected the plugin structure and added the accuracy values in 1.5. Improved the pattern and added the changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send HEAD / HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/1.[0-1] ### *Server: Apache*</plugin_procedure_detection>
+<plugin_detection_accuracy>90</plugin_detection_accuracy>
+<plugin_comment>The banner in the http server head looks usually like "Server: Apache/#.*.*". But it may be possible to hide the Apache server version.</plugin_comment>
+<bug_produced_name>Apache Software Foundation</bug_produced_name>
+<bug_produced_email>apache at apache dot org</bug_produced_email>
+<bug_produced_web>http://httpd.apache.org</bug_produced_web>
+<bug_affected>Apache web servers</bug_affected>
+<bug_not_affected>All other web server implementations</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>An attacker who is able to get a direct connection to the port can identify the banner of this web server as Apache. By this knowledge further enumerations and attacks are possible.</bug_description>
+<bug_solution>A service if not needed should be de-installed or disabled. If this is not possible, an access control list (ACL) with firewalling should be applied to this port. And if possible change the welcome banner to confuse an attacker and give him false information.</bug_solution>
+<bug_fixing_time>1 hour</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Low</bug_severity>
+<bug_popularity>9</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>5</bug_impact>
+<bug_risk>4</bug_risk>
+<bug_netrecon_rating>39</bug_netrecon_rating>
+<bug_check_tool>Most CGI scanners (e.g. N-Stealth, Whisker, Nikto) and security scanners (e.g. Nessus) are able to detect the used web server.</bug_check_tool>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

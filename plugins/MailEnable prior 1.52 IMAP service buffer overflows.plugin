@@ -1,0 +1,39 @@
+<plugin_id>333</plugin_id>
+<plugin_name>MailEnable prior 1.52 IMAP service buffer overflows</plugin_name>
+<plugin_family>SMTP</plugin_family>
+<plugin_created_date>2005/01/09</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc.ruef at computec.ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_version>1.0</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>143</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists *Mail*Enable* Service*1.[0-4].* OR *Mail*Enable* Service*1.5.[0-2]*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>The NASL script is Copyright (C) 2004 George A. Theall</plugin_comment>
+<bug_produced_web>http://www.mailenable.com</bug_produced_web>
+<bug_affected>MailEnable prior 1.52</bug_affected>
+<bug_not_affected>MailEnable prior 1.52 with patch, newer versions or other servers</bug_not_affected>
+<bug_vulnerability_class>Buffer Overflow</bug_vulnerability_class>
+<bug_description>The target is running at least one instance of MailEnable's IMAP service. Two flaws exist in MailEnable Professional Edition 1.52 and  earlier as well as MailEnable Enterprise Edition 1.01 and earlier - a  stack-based buffer overflow and an object pointer overwrite. A remote  attacker can use either vulnerability to execute arbitrary code on the  target.  More information is available at: http://www.hat-squad.com/en/000102.html</bug_description>
+<bug_solution>Apply the IMAP hotfix dated 25 November 2004 and found at http://www.mailenable.com/hotfix/default.asp</bug_solution>
+<bug_fixing_time>Approx. 20 minutes</bug_fixing_time>
+<bug_exploit_availability>Maybe</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/11755/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>7</bug_popularity>
+<bug_simplicity>6</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>8</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus can check this flaw with the plugin 15852 (MailEnable IMAP Service Remote Buffer Overflows).</bug_check_tool>
+<source_securityfocus_bid>11755</source_securityfocus_bid>
+<source_osvdb_id>12135</source_osvdb_id>
+<source_nessus_id>15852</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.hat-squad.com/en/000102.html</source_misc>
+
+

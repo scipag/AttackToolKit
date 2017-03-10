@@ -1,0 +1,42 @@
+<plugin_id>28</plugin_id>
+<plugin_name>Sun Solaris unused accounts disclosure</plugin_name>
+<plugin_family>Finger</plugin_family>
+<plugin_created_date>2003/11/14</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.3</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.3</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>79</plugin_port>
+<plugin_procedure_exploit>open|send a b c d e f g h\n|sleep|close|pattern_exists nobody</plugin_procedure_exploit>
+<plugin_exploit_accuracy>99</plugin_exploit_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_affected>Sun Solaris</bug_affected>
+<bug_not_affected>Other unix systems</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>A bug in the Sun Solaris finger daemon lets an attacker display all unused accounts. He has to send the request finger 'a b c d e f g h'@target.</bug_description>
+<bug_solution>The finger service, if not needed, should be disabled (in /etc/inetd.conf) or if possible firewalled. Sun Microsystems Inc. published a patch that solve this issue.</bug_solution>
+<bug_fixing_time>20 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/3457/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>7</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>6</bug_impact>
+<bug_risk>6</bug_risk>
+<bug_nessus_risk>Medium</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do the same check.</bug_check_tool>
+<source_securityfocus_bid>3457</source_securityfocus_bid>
+<source_nessus_id>10788</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

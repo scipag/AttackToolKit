@@ -1,0 +1,34 @@
+<plugin_id>287</plugin_id>
+<plugin_name>GateCrasher detection</plugin_name>
+<plugin_family>Backdoors</plugin_family>
+<plugin_created_date>2005/01/02</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc.ruef at computec.ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_version>1.0</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>6969</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists GateCrasher</plugin_procedure_detection>
+<plugin_detection_accuracy>85</plugin_detection_accuracy>
+<plugin_comment>The NASL script is Copyright (C) 1999 Renaud Deraison</plugin_comment>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>GateCrasher is installed. This backdoor allows anyone to partially take the control of the remote system. An attacker may use it to steal your password or prevent your from working  properly.</bug_description>
+<bug_solution>telnet to this host on port 6969, then type 'gatecrasher;', without the quotes, and press Enter. Then type 'uninstall;' and press Enter, it will be uninstalled.</bug_solution>
+<bug_fixing_time>Approx. 20 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>4</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>6</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_check_tool>Nessus can check this flaw with the plugin 10093 (GateCrasher).</bug_check_tool>
+<source_cve>CAN-1999-0660</source_cve>
+<source_nessus_id>10093</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+
+

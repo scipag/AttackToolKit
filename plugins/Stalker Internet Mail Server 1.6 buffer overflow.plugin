@@ -1,0 +1,41 @@
+<plugin_id>81</plugin_id>
+<plugin_name>Stalker Internet Mail Server 1.6 buffer overflow</plugin_name>
+<plugin_family>SMTP</plugin_family>
+<plugin_created_date>2004/03/23</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.2</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.2</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>25</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists 220 *Stalker Internet Mail Server V.1.6 is ready.*</plugin_procedure_detection>
+<plugin_detection_accuracy>90</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_advisory>http://www.securityfocus.com/archive/1/8951</bug_advisory>
+<bug_affected>Stalker Internet Mail Server 1.6</bug_affected>
+<bug_not_affected>Stalker Internet Mail Server 1.7 and newer</bug_not_affected>
+<bug_vulnerability_class>Buffer Overflow</bug_vulnerability_class>
+<bug_description>The Stalker Internet Mail Server is a small Mail Transfer Agent. It has been discovered that a buffer overflow can be exploitet sending several hundred bytes of data as hostname with the HELO command. It has been reported that this will cause to crash the server. But it may be possible to run arbritrary code with the server privileges.</bug_description>
+<bug_solution>There is a new software version available. You should upgrade your system. Limit unwanted connections and communications with firewalling.</bug_solution>
+<bug_fixing_time>1 hour</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/62/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>8</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>8</bug_risk>
+<source_cve>CAN-1999-1504</source_cve>
+<source_securityfocus_bid>62</source_securityfocus_bid>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

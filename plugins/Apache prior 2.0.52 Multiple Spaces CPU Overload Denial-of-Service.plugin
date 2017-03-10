@@ -1,0 +1,47 @@
+<plugin_id>280</plugin_id>
+<plugin_name>Apache prior 2.0.52 Multiple Spaces CPU Overload Denial-of-Service</plugin_name>
+<plugin_family>Denial of Service</plugin_family>
+<plugin_created_date>2004/12/05</plugin_created_date>
+<plugin_created_name>David Nester</plugin_created_name>
+<plugin_created_email>david at icrew dot org</plugin_created_email>
+<plugin_created_web>http://www.icrew.org</plugin_created_web>
+<plugin_created_company>iCrew Security</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/12/06</plugin_updated_date>
+<plugin_version>1.0</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send HEAD / HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# ### *Apache/1.#* OR HTTP/#.# ### *Apache/2.0.[0-4]* OR HTTP/#.# ### *Apache/2.0.5[0-2]*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_published_name>Chintan Trivedi</bug_published_name>
+<bug_published_email>chesschintan at gmail dot com</bug_published_email>
+<bug_published_web> </bug_published_web>
+<bug_published_date>2004/01/01</bug_published_date>
+<bug_produced_name>Apache Software Foundation</bug_produced_name>
+<bug_produced_email>apache at apache dot org</bug_produced_email>
+<bug_produced_web>http://httpd.apache.org</bug_produced_web>
+<bug_not_affected>Other versions or solutions</bug_not_affected>
+<bug_vulnerability_class>Denial Of Service</bug_vulnerability_class>
+<bug_description>Through this vulnerability, a user is able to create a denial of service by issuing a HTTP GET request with several thousand spaces. This will cause CPU overhead to increase to a point of denial of service. This can be exploited by a remote, unauthenticated user.</bug_description>
+<bug_solution>This is resolved in Apache httpd 2.0.53-dev. Be aware that this is a development release.</bug_solution>
+<bug_fixing_time>Approx. 1 hour</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://securitytracker.com/id?1012083</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>No</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>5</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>6</bug_risk>
+<bug_nessus_risk>High</bug_nessus_risk>
+<bug_iss_scanner_rating>High</bug_iss_scanner_rating>
+<source_cve>CAN-2004-0942</source_cve>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.apacheweek.com/features/security-13</source_misc>
+
+

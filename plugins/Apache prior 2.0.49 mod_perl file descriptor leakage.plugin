@@ -1,0 +1,51 @@
+<plugin_id>258</plugin_id>
+<plugin_name>Apache prior 2.0.49 mod_perl file descriptor leakage</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_created_date>2004/09/21</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/14</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1. Improved the pattern matching and introduced the plugin changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send HEAD / HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/1.[0-1] ### *Server: Apache/[0-1].* OR HTTP/1.[0-1] ### *Server: Apache/2.0.[0-3]* OR HTTP/1.[0-1] ### *Server: Apache/2.0.4[0-8]*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_published_name>Steve Grubb</bug_published_name>
+<bug_published_email>linux_4ever at yahoo dot com</bug_published_email>
+<bug_published_date>2004/01/21</bug_published_date>
+<bug_advisory>http://www.securityfocus.com/archive/1/350648</bug_advisory>
+<bug_produced_name>Apache Software Foundation</bug_produced_name>
+<bug_produced_email>apache at apache dot org</bug_produced_email>
+<bug_produced_web>http://httpd.apache.org</bug_produced_web>
+<bug_affected>Apache prior 2.0.49 with mod_perl</bug_affected>
+<bug_not_affected>Apache 2.0.49 and newer or other solutions</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>The remote host is running an Apache web server. It has been reported that in Apache web server prior 2.0.49 has a file descriptor leakage in the module mod_perl. This issue could be exploited by an attacker to hijack a vulnerable server daemon. Other attacks are also possible.</bug_description>
+<bug_solution>If the web server is not used it should be de-installed or de-activated. Install the newest patch or bugfix to solve the problem or upgrade to the latest software version which is not vulnerable anymore. To make it harder to find the server the daemon could be configured to listen at another port (e.g. 8081). Alternation of the application banner can confuse an attacker and let him determine the wrong software. Additionally limit unwanted connections and communications with firewalling.</bug_solution>
+<bug_fixing_time>Approx. 2 hours</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/archive/1/350648</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>5</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>7</bug_impact>
+<bug_risk>6</bug_risk>
+<bug_check_tool>A proof-of-concept written in Perl has been attached at the Bugtraq posting. A copy of that is also available at http://www.securityfocus.com/bid/9471/exploit/</bug_check_tool>
+<source_securityfocus_bid>9471</source_securityfocus_bid>
+<source_secunia_id>10697</source_secunia_id>
+<source_securiteam_url>http://www.securiteam.com/unixfocus/5LP0Q0KBPA.html</source_securiteam_url>
+<source_scip_id>489</source_scip_id>
+<source_heise_security>43882</source_heise_security>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

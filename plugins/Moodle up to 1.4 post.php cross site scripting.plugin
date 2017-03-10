@@ -1,0 +1,46 @@
+<plugin_id>95</plugin_id>
+<plugin_name>Moodle up to 1.4 post.php cross site scripting</plugin_name>
+<plugin_family>CGI</plugin_family>
+<plugin_created_date>2004/08/16</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.1</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.1</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>21</plugin_port>
+<plugin_procedure_exploit>open|sleep|send GET /post.php?reply=<script>document.write('ATK plugin to detect post.php flaw');</script> HTTP/1.0\n\n|sleep|close|pattern_exists plugin to detect post.php flaw</plugin_procedure_exploit>
+<plugin_exploit_accuracy>99</plugin_exploit_accuracy>
+<plugin_comment>Check is copied from the Nessus plugin (see Nessus ID listed in the sources).</plugin_comment>
+<bug_published_name>Javier Ubilla and Ariel </bug_published_name>
+<bug_published_date>2004/08/06</bug_published_date>
+<bug_advisory>http://www.securityfocus.com/archive/1/661</bug_advisory>
+<bug_affected>Moodle up to 1.4</bug_affected>
+<bug_not_affected>Moodle newer than 1.4</bug_not_affected>
+<bug_vulnerability_class>Cross Site Scripting</bug_vulnerability_class>
+<bug_description>The remote host is running the Moodle PHP suite. Moodle contains a flaw that allows a remote cross site scripting attack. This flaw exists because the application does not validate the 'reply' variable upon submission to the 'post.php' script. This could allow a user to create a specially crafted URL that would execute arbitrary code in a user's browser within the trust relationship between the browser and the server, leading to a loss of integrity.</bug_description>
+<bug_solution>The server should be deactivated or de-installed if not necessary. To make it harder to find the server the daemon could be configured to listen at another port (e.g. 2181). Try to prevent unwanted connection attempts by filtering traffic with firewalling. Update to the latest version of the affected software.</bug_solution>
+<bug_fixing_time>Approx. 2 hours</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/10884/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>4</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>6</bug_impact>
+<bug_risk>5</bug_risk>
+<bug_nessus_risk>Medium</bug_nessus_risk>
+<bug_check_tool>Nessus</bug_check_tool>
+<source_securityfocus_bid>10884</source_securityfocus_bid>
+<source_osvdb_id>8383</source_osvdb_id>
+<source_nessus_id>14257</source_nessus_id>
+<source_literature>Hacking Intern - Angriffe, Strategien, Abwehr, Marc Ruef, Marko Rogge, Uwe Velten and Wolfram Gieseke, November 1, 2002, Data Becker, Düsseldorf, ISBN 381582284X</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

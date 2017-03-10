@@ -1,0 +1,43 @@
+<plugin_id>322</plugin_id>
+<plugin_name>Sun and Netscape NSS Library SSL Buffer Overflow</plugin_name>
+<plugin_family>Misc</plugin_family>
+<plugin_created_date>2004/12/03</plugin_created_date>
+<plugin_created_name>David Nester</plugin_created_name>
+<plugin_created_email>david at icrew dot org</plugin_created_email>
+<plugin_created_web>http://www.icrew.org</plugin_created_web>
+<plugin_created_company>iCrew Security</plugin_created_company>
+<plugin_updated_name>David Nester</plugin_updated_name>
+<plugin_updated_email>david at icrew dot org</plugin_updated_email>
+<plugin_updated_web>http://www.icrew.org/</plugin_updated_web>
+<plugin_updated_company>iCrew Security</plugin_updated_company>
+<plugin_updated_date>2004/12/05</plugin_updated_date>
+<plugin_version>1.1</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>443</plugin_port>
+<plugin_procedure_detection>open|send HEAD / HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# ### *iplanet* OR HTTP/#.# ### *sun* OR HTTP/#.# ### *netscape* </plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_published_name>Sun Microsystems</bug_published_name>
+<bug_published_email>info at sun dot com</bug_published_email>
+<bug_published_web>http://sunsolve.sun.com/search/document.do?assetkey=1-26-57643-1&searchclause=security</bug_published_web>
+<bug_published_date>2004/09/16</bug_published_date>
+<bug_produced_name>Sun and Netscape NSS Library</bug_produced_name>
+<bug_produced_email>info at sun dot com</bug_produced_email>
+<bug_produced_web>http://sunsolve.sun.com/search/document.do?assetkey=1-26-57643-1&searchclause=security</bug_produced_web>
+<bug_not_affected>Other versions or solutions</bug_not_affected>
+<bug_vulnerability_class>Buffer Overflow</bug_vulnerability_class>
+<bug_description>A buffer overflow vulnerability in the Netscape NSS library, used by Netscape and Sun ONE Web severs to process Secure Sockets Layer requests, facilitates remote code execution.  Code within the library fails to perform adequate bounds checking when processing SSLv2 requests. Specifically on a user-supplied record field within SSLv2 client hello messages sent during the creation of connections between a server and client. Data outside of the allocated buffer is placed in heap memory, and executed with the privileges of the Web server daemon.</bug_description>
+<bug_solution>The NSS Library is open-source, and an updated version is available via FTP from the Mozilla Organization.Sun has released Sun Alert ID 57643 with information on how to obtain updates for Java Enterprise System.http://sunsolve.sun.com/search/document.do?assetkey=1-26-57643-1&searchclause=security</bug_solution>
+<bug_fixing_time>Approx. 1 hour</bug_fixing_time>
+<bug_exploit_availability>No</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>No</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>1</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>8</bug_risk>
+<source_literature>Hacking Intern - Angriffe, Strategien, Abwehr, Marc Ruef, Marko Rogge, Uwe Velten and Wolfram Gieseke, November 1, 2002, Data Becker, Düsseldorf, ISBN 381582284X</source_literature>
+<source_misc>http://sunsolve.sun.com/search/document.do?assetkey=1-26-57643-1&searchclause=security</source_misc>
+
+

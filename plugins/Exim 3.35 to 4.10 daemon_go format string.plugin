@@ -1,0 +1,40 @@
+<plugin_id>79</plugin_id>
+<plugin_name>Exim 3.35 to 4.10 daemon_go() format string</plugin_name>
+<plugin_family>SMTP</plugin_family>
+<plugin_created_date>2004/03/23</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.3</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.3</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>25</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists 220 *Exim 3.35* OR 220 *Exim 3.36* OR 220 *Exim 4.10*</plugin_procedure_detection>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_advisory>http://www.securityfocus.com/archive/1/302101</bug_advisory>
+<bug_affected>Exim MTA 3.5 to 4.10</bug_affected>
+<bug_not_affected>Exim MTA 4.10 and newer</bug_not_affected>
+<bug_vulnerability_class>Format String</bug_vulnerability_class>
+<bug_description>Exim is an well-known open-source Mail Transfer Agent (MTA) for Unix systems. It has been discovered that there is a format string vulnerability in the daemon_go() function. This attack is possible by sending the malicous requests over the command line. An attacker may run arbritrary code and get root privileges. It should be noted that the execution of the affected function is limited to the user defined as exim-admin-user. This one must be defined at compile time.</bug_description>
+<bug_solution>The vendor released patches to fix the vulnerability. Users with affected systems should update as soon as possible. The Exim Patch for 3.36 can be found at http://downloads.securityfocus.com/vulnerabilities/patches/exim336.patch and for 4.10 at http://downloads.securityfocus.com/vulnerabilities/patches/exim410.patch.</bug_solution>
+<bug_fixing_time>1 hour</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/data/vulnerabilities/exploits/hoagie_exim.c</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>6</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>6</bug_risk>
+<source_securityfocus_bid>6314</source_securityfocus_bid>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

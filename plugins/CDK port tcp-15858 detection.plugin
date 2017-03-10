@@ -1,0 +1,34 @@
+<plugin_id>285</plugin_id>
+<plugin_name>CDK port tcp/15858 detection</plugin_name>
+<plugin_family>Backdoors</plugin_family>
+<plugin_created_date>2005/01/02</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc.ruef at computec.ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_version>1.0</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>15858</plugin_port>
+<plugin_procedure_exploit>open|sleep|send ypi0ca\n|close|pattern_exists Welcome</plugin_procedure_exploit>
+<plugin_exploit_accuracy>99</plugin_exploit_accuracy>
+<plugin_comment>The NASL script is Copyright (C) 2000 Renaud Deraison</plugin_comment>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>The remote host appears to be running CDK, which is a backdoor that can be used to control your system. To use it, an attacker just has to connect onto this port, and send the password 'ypi0ca'. It is very likely that this host has been compromised</bug_description>
+<bug_solution>Restore your system from backups, contact CERT and your local authorities.</bug_solution>
+<bug_fixing_time>Approx. 2 days</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>High</bug_severity>
+<bug_popularity>3</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>9</bug_impact>
+<bug_risk>6</bug_risk>
+<bug_nessus_risk>Critical</bug_nessus_risk>
+<bug_check_tool>Nessus can check this flaw with the plugin 10036 (CDK Detect).</bug_check_tool>
+<source_cve>CAN-1999-0660</source_cve>
+<source_nessus_id>10036</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+
+

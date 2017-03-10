@@ -1,0 +1,43 @@
+<plugin_id>316</plugin_id>
+<plugin_name>Microsoft Internet Information Server 4.0 non existent file .idq path disclosure</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_created_date>2005/01/05</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc.ruef at computec.ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_version>1.0</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send HEAD / HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# ### *Server: Microsoft-IIS/4.0*</plugin_procedure_detection>
+<plugin_procedure_exploit>open|send GET /anything.idq HTTP/1.0\n\n|sleep|close|pattern_exists *[a-z]\:\\*anything*</plugin_procedure_exploit>
+<plugin_detection_accuracy>80</plugin_detection_accuracy>
+<plugin_exploit_accuracy>90</plugin_exploit_accuracy>
+<plugin_comment>The NASL script is Copyright (C) 2000 Filipe Custodio</plugin_comment>
+<bug_produced_name>Microsoft</bug_produced_name>
+<bug_produced_email>info at microsoft dot com</bug_produced_email>
+<bug_produced_web>http://www.microsoft.com</bug_produced_web>
+<bug_affected>Microsoft Internet Information Server 4.0</bug_affected>
+<bug_not_affected>Other versions of the Microsoft Internet Information Server or other web servers</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>IIS 4.0 allows a remote attacker to obtain the real pathname of the document root by requesting non-existent files with .ida or .idq extensions. An attacker may use this flaw to gain more information about the remote host, and hence make more focused attacks.</bug_description>
+<bug_solution>Select 'Preferences ->Home directory ->Application', and check the checkbox 'Check if file exists' for the ISAPI mappings of your server.</bug_solution>
+<bug_fixing_time>Approx. 15 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/1065/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Low</bug_severity>
+<bug_popularity>8</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>4</bug_impact>
+<bug_risk>6</bug_risk>
+<bug_nessus_risk>Low</bug_nessus_risk>
+<bug_check_tool>Nessus can check this flaw with the plugin 10492 (IIS IDA/IDQ Path Disclosure).</bug_check_tool>
+<source_cve>CAN-2000-0071</source_cve>
+<source_securityfocus_bid>1065</source_securityfocus_bid>
+<source_nessus_id>10492</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+
+

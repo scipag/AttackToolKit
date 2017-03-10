@@ -1,0 +1,39 @@
+<plugin_id>2</plugin_id>
+<plugin_name>Microsoft IIS detection</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_created_date>2003/11/06</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Title and filename changed in version 1.3. Added Symantec rating in version 1.4. Added the information for the banner changing tool and the extended misc. link in version 1.5. Corrected the plugin structure and added the accuracy values in 1.6. Improved the pattern matching and added the changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send HEAD / HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# ### *Server: Microsoft-IIS/*</plugin_procedure_detection>
+<plugin_detection_accuracy>90</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_affected>MS IIS web servers</bug_affected>
+<bug_not_affected>All other web server implementations</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>An attacker who is able to get a direct connection to the port can identify the banner of this web server as MS IIS. By this knowledge further enumerations and attacks are possible.</bug_description>
+<bug_solution>A service if not needed should be de-installed or disabled. If this is not possible, an access control list (ACL) with firewalling should be applied to this port. And if possible change the welcome banner to confuse an attacker and give him false information. This can be done with IIS Banner Changer by Tiago Halm <thalm at netcabo dot pt> [http://www.kodeit.org/utils/iisbanner.zip].</bug_solution>
+<bug_fixing_time>Approx. 1 hour</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Low</bug_severity>
+<bug_popularity>9</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>6</bug_impact>
+<bug_risk>6</bug_risk>
+<bug_netrecon_rating>39</bug_netrecon_rating>
+<bug_check_tool>Most CGI and security scanners are able to detect the installed web server.</bug_check_tool>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch/dokumente/windows/sicherheit_von_windows/2-scanning/index.html#anhand_der_banner</source_misc>
+

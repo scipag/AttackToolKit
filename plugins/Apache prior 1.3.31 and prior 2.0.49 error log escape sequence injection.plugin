@@ -1,0 +1,37 @@
+<plugin_id>309</plugin_id>
+<plugin_name>Apache prior 1.3.31 and prior 2.0.49 error log escape sequence injection</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_version>1.1</plugin_version>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|sleep|close|pattern_exists|open|send HEAD / HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# ###*Server: Apache*1.[0-2].* OR HTTP/#.# ###*Server: Apache*1.3.[0-2]* OR HTTP/#.# ###*Server: Apache*1.3.3[0-1]* OR HTTP/#.# ###*Server: Apache*2.0.[0-3]* OR HTTP/#.# ###*Server: Apache*2.0.4[0-9]*</plugin_procedure_detection>
+<plugin_detection_accuracy>85</plugin_detection_accuracy>
+<plugin_comment>The NASL script is Copyright (C) 2004 George A. Theall</plugin_comment>
+<bug_produced_name>Apache Software Foundation</bug_produced_name>
+<bug_produced_email>apache at apache dot org</bug_produced_email>
+<bug_produced_web>http://httpd.apache.org</bug_produced_web>
+<bug_affected>Apache prior 1.3.31 or prior 2.0.49</bug_affected>
+<bug_not_affected>Apache newer than 1.3.31 or newer than 2.0.49</bug_not_affected>
+<bug_vulnerability_class>Unknown</bug_vulnerability_class>
+<bug_description>The target is running an Apache web server which allows for the  injection of arbitrary escape sequences into its error logs. An attacker might use this vulnerability in an attempt to exploit similar vulnerabilities in terminal emulators.</bug_description>
+<bug_solution>Upgrade to Apache version 1.3.31 or 2.0.49 or newer.</bug_solution>
+<bug_fixing_time>Approx. 20 minutes</bug_fixing_time>
+<bug_exploit_availability>Maybe</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/9930/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Low</bug_severity>
+<bug_popularity>7</bug_popularity>
+<bug_simplicity>4</bug_simplicity>
+<bug_impact>6</bug_impact>
+<bug_risk>4</bug_risk>
+<bug_nessus_risk>Low</bug_nessus_risk>
+<bug_check_tool>Nessus can check this flaw with the plugin 12239 (Apache Error Log Escape Sequence Injection).</bug_check_tool>
+<source_cve>CAN-2003-0020</source_cve>
+<source_securityfocus_bid>9930</source_securityfocus_bid>
+<source_nessus_id>12239</source_nessus_id>
+<source_rhsa_id>RHSA-2003-139</source_rhsa_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>SuSE-SA:2004:009</source_misc>
+
+

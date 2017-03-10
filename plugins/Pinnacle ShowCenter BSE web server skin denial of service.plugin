@@ -1,0 +1,45 @@
+<plugin_id>220</plugin_id>
+<plugin_name>Pinnacle ShowCenter BSE web server skin denial of service</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_created_date>2004/09/10</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.2</plugin_version>
+<plugin_changelog>Added SecurityTracker ID in version 1.1. Corrected the plugin structure and added the accuracy values in 1.2</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>8000</plugin_port>
+<plugin_procedure_exploit>open|send GET /ShowCenter/SettingsBase.php?Skin=ATK HTTP/1.0\n\n|sleep|close|pattern_exists failed to open stream OR No such file or directory in OR loaduserprofile(): Failed opening required OR \Pinnacle\ShowCenter\</plugin_procedure_exploit>
+<plugin_exploit_accuracy>90</plugin_exploit_accuracy>
+<plugin_comment>The server is usually bound to the official address (e.g. 192.168.0.11) and not the loopback address (127.0.0.1). This may affect localhost audits. This plugin does check the attack very accurate but the denial of service is not given directly.</plugin_comment>
+<bug_published_name>Marc Ruef</bug_published_name>
+<bug_published_email>marc dot ruef at computec.ch</bug_published_email>
+<bug_published_web>http://www.computec.ch</bug_published_web>
+<bug_published_company>computec.ch</bug_published_company>
+<bug_published_date>2004/09/10</bug_published_date>
+<bug_advisory>http://www.computec.ch/projekte/atk/</bug_advisory>
+<bug_affected>Pinnacle ShowCenter</bug_affected>
+<bug_not_affected>Other solutions</bug_not_affected>
+<bug_vulnerability_class>Denial Of Service</bug_vulnerability_class>
+<bug_description>The remote system is running the Pinnacle ShowCenter. This is a straming server that comes with a web GUI that is provided with a HTTP server named BSE. If somebody is able to connect to the ShowCenter, it is possible to start a denial of service attack by defining a non existent skin. Every connection to the target from the host who specified the wrong skin will be terminated by PHP warning and fata error.</bug_description>
+<bug_solution>Resetting the skin name by using another HTTP GET request for an existing skin as like http://192.168.0.11:8000/ShowCenter/SettingsBase.php?Skin=DefaultXL does not work. Thus, check the path given in the warning. If this is C:\Programme\Pinnacle\ShowCenter\DocPath/Skin/ATK/Name.inc.php you can copy or rename another profile in the path ATK to provide the needed files. After resetting an existent skin you can delete the temp skin directory. Upgrade the affected software. The server should be deactivated or de-installed if not necessary. To make it harder to find the server the daemon could be configured to listen at another port (e.g. 8081). Try to prevent unwanted connection attempts by filtering traffic with firewalling. Alternation of the application banner can confuse an attacker and let him determine the wrong software.</bug_solution>
+<bug_fixing_time>Approx. 30 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.computec.ch/projekte/atk/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>3</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>7</bug_impact>
+<bug_risk>6</bug_risk>
+<source_securitytracker_id>1011379</source_securitytracker_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

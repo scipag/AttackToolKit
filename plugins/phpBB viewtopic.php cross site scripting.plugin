@@ -1,0 +1,43 @@
+<plugin_id>90</plugin_id>
+<plugin_name>phpBB viewtopic.php cross site scripting</plugin_name>
+<plugin_family>CGI</plugin_family>
+<plugin_created_date>2004/03/23</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/14</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.2. Improved the pattern matching and introduced the plugin changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_exploit>open|send GET /viewtopic.php?t=10&postdays=99<script>atk</script> HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# ### *<script>atk</script>*</plugin_procedure_exploit>
+<plugin_exploit_accuracy>99</plugin_exploit_accuracy>
+<plugin_comment>There is a similar check done in ATK plugin id 91.</plugin_comment>
+<bug_advisory>http://www.securityfocus.com/archive/1/357401</bug_advisory>
+<bug_affected>phpBB Group phpBB 2.0 to 2.0.6</bug_affected>
+<bug_not_affected>phpBB Group phpBB newer than 2.0.6 and other web boards</bug_not_affected>
+<bug_vulnerability_class>Cross Site Scripting</bug_vulnerability_class>
+<bug_description>The remote host is running phpBB. There is a cross site scripting vulnerability in the files ViewTopic.php and ViewForum.php</bug_description>
+<bug_solution>Upgrade to the latest version of this software and limit unwanted connections and communications with firewalling.</bug_solution>
+<bug_fixing_time>1 hour</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_exploit_url>http://www.securityfocus.com/bid/9865/exploit/</bug_exploit_url>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>8</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>8</bug_impact>
+<bug_risk>8</bug_risk>
+<bug_nessus_risk>Serious</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do the same check.</bug_check_tool>
+<source_securityfocus_bid>9865</source_securityfocus_bid>
+<source_nessus_id>12093</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

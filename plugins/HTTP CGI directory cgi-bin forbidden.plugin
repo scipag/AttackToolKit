@@ -1,0 +1,40 @@
+<plugin_id>11</plugin_id>
+<plugin_name>HTTP CGI directory cgi-bin forbidden</plugin_name>
+<plugin_family>HTTP</plugin_family>
+<plugin_created_date>2003/11/13</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>2.0</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.3. Improved the pattern matching and added the changelog in 2.0</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>80</plugin_port>
+<plugin_procedure_detection>open|send GET /cgi-bin HTTP/1.0\n\n|sleep|close|pattern_exists HTTP/#.# 403 *</plugin_procedure_detection>
+<plugin_detection_accuracy>99</plugin_detection_accuracy>
+<plugin_comment>This is not exactly the same test as like Nessus 10039 is. We don't check for browsability - We check for existence/forbidden.</plugin_comment>
+<bug_affected>Web servers with a default cgi-bin directory.</bug_affected>
+<bug_not_affected>Web servers without the default cgi-bin directory.</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>An attacker can try to reach /cgi-bin as a possible directory for CGI scripts. If he gets an Forbidden error he could determine that this directory exists and is used. This information can be used for further attempts.</bug_description>
+<bug_solution>Do not allow users to get the directory listing of the cgi directory.</bug_solution>
+<bug_fixing_time>30 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Low</bug_severity>
+<bug_popularity>8</bug_popularity>
+<bug_simplicity>8</bug_simplicity>
+<bug_impact>4</bug_impact>
+<bug_risk>5</bug_risk>
+<bug_nessus_risk>Medium</bug_nessus_risk>
+<bug_check_tool>Many CGI and security scanners are able to do the same or a similar check.</bug_check_tool>
+<source_nessus_id>10039</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

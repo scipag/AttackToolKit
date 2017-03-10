@@ -1,0 +1,40 @@
+<plugin_id>33</plugin_id>
+<plugin_name>Proxy port tcp/8080 detection</plugin_name>
+<plugin_family>Firewalls</plugin_family>
+<plugin_created_date>2003/11/14</plugin_created_date>
+<plugin_created_name>Marc Ruef</plugin_created_name>
+<plugin_created_email>marc dot ruef at computec dot ch</plugin_created_email>
+<plugin_created_web>http://www.computec.ch</plugin_created_web>
+<plugin_created_company>computec.ch</plugin_created_company>
+<plugin_updated_name>Marc Ruef</plugin_updated_name>
+<plugin_updated_email>marc dot ruef at computec dot ch</plugin_updated_email>
+<plugin_updated_web>http://www.computec.ch</plugin_updated_web>
+<plugin_updated_company>computec.ch</plugin_updated_company>
+<plugin_updated_date>2004/11/13</plugin_updated_date>
+<plugin_version>1.3</plugin_version>
+<plugin_changelog>Corrected the plugin structure and added the accuracy values in 1.3</plugin_changelog>
+<plugin_protocol>tcp</plugin_protocol>
+<plugin_port>8080</plugin_port>
+<plugin_procedure_detection>open|send GET http://www.computec.ch HTTP/1.0\nProxy-Connection: Keep-Alive\n\n|sleep|close|pattern_exists HTTP/1.</plugin_procedure_detection>
+<plugin_detection_accuracy>90</plugin_detection_accuracy>
+<plugin_comment>This plugin was written with the ATK Attack Editor.</plugin_comment>
+<bug_affected>Proxy servers listening on tcp/8080</bug_affected>
+<bug_not_affected>Proxy servers bind to another port</bug_not_affected>
+<bug_vulnerability_class>Configuration</bug_vulnerability_class>
+<bug_description>Port tcp/8080 is a often used port for proxy servers. If an attacker can connect to the port, start an HTTP request and get an HTTP reply, he can be very sure that there is a web proxy available.</bug_description>
+<bug_solution>Reconfigure the remote proxy so that it only accepts requests coming from inside your network.</bug_solution>
+<bug_fixing_time>20 minutes</bug_fixing_time>
+<bug_exploit_availability>Yes</bug_exploit_availability>
+<bug_remote>Yes</bug_remote>
+<bug_local>Yes</bug_local>
+<bug_severity>Medium</bug_severity>
+<bug_popularity>8</bug_popularity>
+<bug_simplicity>7</bug_simplicity>
+<bug_impact>6</bug_impact>
+<bug_risk>6</bug_risk>
+<bug_nessus_risk>Low/Medium</bug_nessus_risk>
+<bug_check_tool>Nessus is able to do the same check.</bug_check_tool>
+<source_nessus_id>10195</source_nessus_id>
+<source_literature>Hacking Exposed: Network Security Secrets & Solutions, Stuart McClure, Joel Scambray and George Kurtz, February 25, 2003, 4th Edition, McGraw-Hill Osborne Media, ISBN 0072227427</source_literature>
+<source_misc>http://www.computec.ch</source_misc>
+

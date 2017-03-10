@@ -1,0 +1,7 @@
+<name>FTP detected</name>
+<version>1.0</version>
+<create_date>2003.12.07</create_date>
+<created_by>Marc Ruef <marc.ruef@computec.ch> http://www.computec.ch</created_by>
+<trigger>FTP</trigger>
+<description>The string 'FTP' could be found in the response. This may indicate that the target port provides the ftp (File Transfer Protocol) service.</description>
+<suggestion>It is suggested to modify the wanted ftp server checks to audit this port for further generic vulnerabilities.</suggestion>
